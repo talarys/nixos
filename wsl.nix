@@ -13,6 +13,11 @@
   environment.pathsToLink = ["/share/fish"];
   environment.shells = [pkgs.fish];
 
+  programs.nix-ld = {
+    enable = true;
+    package = pkgs.nix-ld-rs;
+  };
+
   environment.enableAllTerminfo = true;
 
   security.sudo.wheelNeedsPassword = false;

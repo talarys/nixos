@@ -60,6 +60,9 @@
 
     shellcheck
     shfmt
+    neovim
+    lunarvim
+    zig
   ];
 
   programs = {
@@ -150,7 +153,7 @@
       shellAbbrs =
         {
           gc = "nix-collect-garbage --delete-old";
-          rebuild = "nixos-rebuild switch --flake .";
+          rebuild = "sudo nixos-rebuild switch --flake /home/talarys/nixos";
         }
         # navigation shortcuts
         // {
@@ -180,7 +183,7 @@
         pbpaste = "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -command 'Get-Clipboard'";
         explorer = "/mnt/c/Windows/explorer.exe";
 
-        code = "/mnt/c/Users/[my-user]/AppData/Local/Programs/'Microsoft VS Code'/bin/code";
+        code = "/mnt/c/Users/talarys/AppData/Local/Programs/'Microsoft VS Code'/bin/code";
       };
       plugins = [
         {
