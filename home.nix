@@ -19,50 +19,49 @@
   };
 
   home.packages = with pkgs; [
-    bat
-    bottom
-    coreutils
-    curl
-    du-dust
-    fd
-    findutils
-    fx
-    git
-    git-crypt
-    htop
-    jq
-    killall
-    mosh
-    procs
-    ripgrep
-    sd
-    tmux
-    tree
-    unzip
-    vim
-    wget
-    zip
+    bat # Command-line cat, useful for reading files
+    coreutils # Essential command-line utilities
+    curl # Tool for transferring data with URLs
+    du-dust # A fast, simple alternative to `du`
+    fd # A fast, flexible alternative to `find`
+    findutils # Collection of command-line utilities for finding files
+    fx # A command-line tool for searching files
+    git # Version control system
 
-    gh
-    just
+    btop # Interactive process viewer
+    jq # Command-line JSON processor
+    killall # Kill processes by name
+    mosh # A resilient, SSH-like protocol
+    procs # Collection of useful shell procedures
+    ripgrep # A fast grep that works recursively
+    sd # A simple, fast, and user-friendly disk usage analyzer
+    tmux # Terminal multiplexer
+    tree # Displays directory structure
+    unzip # Extracts files from zip archives
+    vim # Text editor
+    wget # Download files from the internet
+    zip # Creates zip archives
 
-    rustup
-    cargo-cache
-    cargo-expand
+    gh # GitHub CLI
+    just # Build system and package manager
 
-    mkcert
-    httpie
+    rustup # Rust toolchain installer
+    cargo-cache # Cache Rust package dependencies
+    cargo-expand # Expand Rust package dependencies
 
-    nil # nix
-    alejandra # nix
-    deadnix # nix
-    statix # nix
+    mkcert # Generate self-signed certificates
+    httpie # HTTP client
 
-    shellcheck
-    shfmt
-    neovim
-    lunarvim
-    zig
+    nil # Nix package manager
+    alejandra # Nix package manager
+    deadnix # Nix package manager
+    statix # Nix package manager
+
+    shellcheck # Static analysis tool for shell scripts
+    shfmt # Code formatter for shell scripts
+    neovim # Text editor
+    lunarvim # Text editor
+    zig # Systems programming language
   ];
 
   programs = {
