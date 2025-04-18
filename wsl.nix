@@ -22,16 +22,14 @@
 
   security.sudo.wheelNeedsPassword = false;
 
-  # services.openssh.enable = true;
-
   users.users.${username} = {
     isNormalUser = true;
     shell = pkgs.fish;
     extraGroups = [
       "wheel"
-      # "docker"
     ];
-    # hashedPassword = "";
+
+    hashedPassword = "260fdfa9dd036152068ccea792feb6a8cf1982f5b0573b9282a5c82c91f2d9be355a0e2160e149e96ec773122a0385e6662e07f632a1b7f7be1220f8bf27a60e";
     # openssh.authorizedKeys.keys = [
     #   "ssh-rsa ..."
     # ];
