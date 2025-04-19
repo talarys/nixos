@@ -50,6 +50,10 @@
     cargo-expand # Expand Rust package dependencies
 
     zig # Zig programming language
+    nodejs_23 # JavaScript runtime
+    python312 # Python programming language
+    stylua # Lua code formatter
+
     mkcert # Generate self-signed certificates
     httpie # HTTP client
 
