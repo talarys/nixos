@@ -49,6 +49,7 @@
     cargo-cache # Cache Rust package dependencies
     cargo-expand # Expand Rust package dependencies
 
+    zig # Zig programming language
     mkcert # Generate self-signed certificates
     httpie # HTTP client
 
