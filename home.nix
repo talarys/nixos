@@ -62,6 +62,7 @@
     neovim # Text editor
     lunarvim # Text editor
     zig # Systems programming language
+    stow # Symlink manager
   ];
 
   programs = {
