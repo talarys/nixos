@@ -60,7 +60,6 @@
     shellcheck # Static analysis tool for shell scripts
     shfmt # Code formatter for shell scripts
     neovim # Text editor
-    lunarvim # Text editor
     zig # Systems programming language
     stow # Symlink manager
   ];
