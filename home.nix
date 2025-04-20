@@ -8,7 +8,7 @@
     nix-index-database.hmModules.nix-index
   ];
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
 
   home = {
     username = "${username}";
