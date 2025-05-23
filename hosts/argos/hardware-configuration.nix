@@ -19,25 +19,72 @@
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/39f03cb5-d8dc-47cc-af93-5d217fc77e68";
     fsType = "btrfs";
-    options = ["subvol=root"];
+    options = [
+      "subvol=root"
+      "noatime"
+      "compress=zstd"
+      "ssd"
+      "discard=async"
+      "space_cache=v2"
+    ];
   };
 
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/39f03cb5-d8dc-47cc-af93-5d217fc77e68";
     fsType = "btrfs";
-    options = ["subvol=home"];
+    options = ["subvol=home" "compress=zstd" "noatime" "ssd" "discard=async"];
   };
 
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/39f03cb5-d8dc-47cc-af93-5d217fc77e68";
     fsType = "btrfs";
-    options = ["subvol=nix"];
+    options = ["subvol=nix" "compress=zstd" "noatime" "ssd" "discard=async"];
   };
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/D213-01BB";
     fsType = "vfat";
-    options = ["fmask=0022" "dmask=0022"];
+    options = ["noatime" "fmask=0022" "dmask=0022"];
+  };
+
+  fileSystems."/mnt/NVME-K" = {
+    device = "/dev/disk/by-uuid/d6c50374-b282-4168-bf9d-41fc20a07619";
+    fsType = "btrfs";
+    options = [
+      "noatime"
+      "ssd"
+      "discard=async"
+      "space_cache=v2"
+      "autodefrag"
+    ];
+  };
+
+  fileSystems."/mnt/NVME-S" = {
+    device = "/dev/disk/by-uuid/44A8CCACA8CC9E34";
+    fsType = "ntfs";
+    options = [
+      "rw"
+      "uid=1000"
+      "gid=100"
+      "fmask=0022"
+      "dmask=0022"
+    ];
+  };
+  fileSystems."/mnt/Data-A" = {
+    device = "/dev/disk/by-uuid/6C6873AC687373A4";
+    fsType = "ntfs";
+    options = [
+      "rw"
+      "uid=1000"
+      "gid=100"
+      "fmask=0022"
+      "dmask=0022"
+    ];
+  };
+
+  services.btrfs.autoScrub = {
+    enable = true;
+    interval = "weekly";
   };
 
   swapDevices = [];
