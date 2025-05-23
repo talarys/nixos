@@ -2,12 +2,14 @@
   outputs,
   pkgs,
   ...
-}: {
+}: let
+  modules = import ../../modules/nixos;
+in {
   imports = [
     ./hardware-configuration.nix
-    outputs.nixosModules.system
-    outputs.nixosModules.kde
-    outputs.nixosModules.nvidia
+    modules.system
+    modules.kde
+    modules.nvidia
   ];
 
   boot.loader.systemd-boot.enable = true;

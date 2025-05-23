@@ -1,22 +1,9 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
-  imports = [];
-
-  nixpkgs = {
-    overlays = [
-      outputs.overlays.additions
-      outputs.overlays.modifications
-    ];
-    config = {
-      allowUnfree = true;
-    };
-  };
+{pkgs, ...}: let
+  modules = import ../../modules/home;
+in {
+  imports = [
+    modules.browsers
+  ];
 
   home = {
     username = "talarys";
