@@ -3,6 +3,7 @@
 in {
   imports = [
     modules.browsers
+    modules.gaming
   ];
 
   programs = {

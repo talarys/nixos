@@ -10,6 +10,7 @@ in {
     modules.system
     modules.kde
     modules.nvidia
+    modules.gaming
   ];
 
   boot.loader.systemd-boot.enable = true;
