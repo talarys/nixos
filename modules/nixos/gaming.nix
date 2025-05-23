@@ -5,18 +5,7 @@
 }: {
   # Hardware configuration
   hardware = {
-    # CPU Microcode
     cpu.amd.updateMicrocode = true;
-  };
-
-  # Kernel configuration
-  boot = {
-    kernelModules = ["nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm"];
-    kernelParams = [
-      "nvidia_drm.modeset=1"
-      "amd_iommu=on"
-    ];
-    extraModulePackages = [config.boot.kernelPackages.nvidia_x11];
   };
 
   # System packages
@@ -37,8 +26,4 @@
     };
     gamemode.enable = true;
   };
-
-  # Performance optimizations
-  powerManagement.cpuFreqGovernor = "performance";
-  services.thermald.enable = true;
 }
