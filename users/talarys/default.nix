@@ -1,4 +1,4 @@
-{
+{...}: {
   users.users.talarys = {
     isNormalUser = true;
     extraGroups = ["wheel"];

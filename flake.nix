@@ -16,13 +16,6 @@
       hostname = "argos";
       system = "x86_64-linux";
 
-      # configurationDefaults = args: {
-      #   home-manager.useGlobalPkgs = true;
-      #   home-manager.useUserPackages = true;
-      #   home-manager.backupFileExtension = "hm-backup";
-      #   home-manager.extraSpecialArgs = args;
-      # };
-
       packages = import ./pkgs nixpkgs.legacyPackages.${system};
 
       formatter = nixpkgs.legacyPackages.${system}.alejandra;
@@ -37,8 +30,14 @@
         inherit system;
         specialArgs = {inherit inputs outputs;};
         modules = [
-          # (configurationDefaults {inherit inputs outputs;})
-          # home-manager.nixosModules.home-manager
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "hm-backup";
+            home-manager.users.${username} = import ./users/${username}/home.nix;
+            home-manager.extraSpecialArgs = {inherit inputs outputs;};
+          }
           ./hosts/${hostname}
           ./users/${username}
         ];
