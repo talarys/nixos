@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   environment.shells = [pkgs.fish];
   programs.fish.enable = true;
+  programs.nix-index-database.comma.enable = true;
 
   users.users.talarys = {
     isNormalUser = true;

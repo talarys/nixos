@@ -91,6 +91,5 @@
     deadnix
     statix
     neovim
-    comma
   ];
 }
