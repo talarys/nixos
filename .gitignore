@@ -1,1 +1,13 @@
+# Build outputs
+/result
+/result-*
 
+# Nix development
+*.lock
+.direnv
+/flake.lock  
+
+# Editor cruft
+.vscode
+.idea
+*.swp

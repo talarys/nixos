@@ -4,7 +4,9 @@ in {
   imports = [
     modules.browsers
     modules.gaming
-    modules.common
+    modules.shell
+    modules.fish
+    modules.git
   ];
 
   programs = {
