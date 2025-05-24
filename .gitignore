@@ -11,3 +11,6 @@
 .vscode
 .idea
 *.swp
+
+cache 
+files

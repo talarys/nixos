@@ -8,6 +8,7 @@ in {
     modules.fish
     modules.git
     modules.programs
+    modules.mpv
   ];
 
   programs = {
