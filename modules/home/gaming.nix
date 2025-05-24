@@ -3,6 +3,7 @@
     # Game launchers
     steam
     lutris
+    steamtinkerlaunch
     heroic
     bottles
 

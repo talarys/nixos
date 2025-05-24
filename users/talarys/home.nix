@@ -7,6 +7,7 @@ in {
     modules.shell
     modules.fish
     modules.git
+    modules.programs
   ];
 
   programs = {
