@@ -22,8 +22,6 @@
 
       formatter = nixpkgs.legacyPackages.${system}.alejandra;
 
-      overlays = import ./overlays {inherit inputs;};
-
       nixosConfigurations."${hostname}" = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {inherit inputs outputs;};

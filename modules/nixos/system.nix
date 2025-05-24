@@ -1,9 +1,8 @@
-{outputs, ...}: {
+{inputs, ...}: let
+  overlays = import ../../overlays {inherit inputs;};
+in {
   nixpkgs = {
-    overlays = [
-      outputs.overlays.additions
-      outputs.overlays.modifications
-    ];
+    inherit overlays;
     config.allowUnfree = true;
   };
 
@@ -20,7 +19,7 @@
     settings = {
       experimental-features = ["nix-command" "flakes"];
       download-buffer-size = "30G";
-      trusted-users = [outputs.username];
+      trusted-users = ["talarys"];
       accept-flake-config = true;
       auto-optimise-store = true;
     };
