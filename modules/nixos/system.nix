@@ -29,6 +29,7 @@ in {
     };
   };
 
+  programs.kdeconnect.enable = true;
   programs.nix-ld.enable = true;
   programs.mtr.enable = true;
   programs.gnupg.agent = {

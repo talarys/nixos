@@ -70,6 +70,7 @@
     nil
     hyperfine
     just
+    epy
 
     bun
     alejandra
