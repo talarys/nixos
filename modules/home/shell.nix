@@ -71,6 +71,7 @@
     hyperfine
     just
 
+    bun
     alejandra
     deadnix
     statix
