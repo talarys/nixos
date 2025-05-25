@@ -8,6 +8,7 @@ in {
   imports = [
     ./hardware-configuration.nix
     modules.system
+    modules.fonts
     modules.kde
     modules.nvidia
     modules.gaming
