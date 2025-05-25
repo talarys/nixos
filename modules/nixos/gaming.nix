@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # Hardware configuration
   hardware = {
     cpu.amd.updateMicrocode = true;
