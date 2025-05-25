@@ -9,6 +9,7 @@ in {
     modules.git
     modules.programs
     modules.mpv
+    modules.stylix
   ];
 
   programs = {

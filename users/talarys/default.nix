@@ -2,6 +2,8 @@
   environment.shells = [pkgs.fish];
   programs.fish.enable = true;
   programs.nix-index-database.comma.enable = true;
+  stylix.enable = true;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
   users.users.talarys = {
     isNormalUser = true;
