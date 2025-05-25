@@ -1,15 +1,5 @@
 {pkgs, ...}: {
   programs = {
-    ghostty = {
-      enable = true;
-      enableFishIntegration = true;
-      settings = {
-        font-size = 14;
-        background-opacity = 0.9;
-        theme = "catppuccin-mocha";
-      };
-    };
-
     yazi = {
       #TODO yazi.flavours
       enable = true;
@@ -57,13 +47,6 @@
     direnv = {
       enable = true;
       nix-direnv.enable = true;
-    };
-
-    helix = {
-      enable = true;
-      settings = {
-        theme = "catppuccin-mocha";
-      };
     };
   };
 

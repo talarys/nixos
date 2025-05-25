@@ -12,6 +12,7 @@ in {
     modules.kde
     modules.nvidia
     modules.gaming
+    modules.stylix
   ];
 
   boot.loader.systemd-boot.enable = true;
