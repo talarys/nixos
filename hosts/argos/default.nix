@@ -13,6 +13,7 @@ in {
     modules.nvidia
     modules.gaming
     modules.stylix
+    modules.virt
   ];
 
   boot.loader.systemd-boot.enable = true;
