@@ -20,8 +20,6 @@
         '';
       };
       shellAbbrs = {
-        gc = "nix-collect-garbage --delete-old";
-        gcd = "sudo nix-collect-garbage -d";
         rebuild = "sudo nixos-rebuild switch --flake /home/talarys/nixos";
       };
 

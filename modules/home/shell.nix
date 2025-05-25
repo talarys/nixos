@@ -69,6 +69,7 @@
     git
     nil
     hyperfine
+    just
 
     alejandra
     deadnix
