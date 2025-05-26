@@ -14,6 +14,7 @@ in {
     modules.gaming
     modules.stylix
     modules.virt
+    modules.vpn
   ];
 
   boot.loader.systemd-boot.enable = true;
