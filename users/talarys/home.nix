@@ -3,7 +3,6 @@
 in {
   imports = [
     modules.browsers
-    modules.gaming
     modules.shell
     modules.fish
     modules.git
