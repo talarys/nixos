@@ -16,9 +16,8 @@
     # Game launchers
     steam
     lutris
-    steamtinkerlaunch
     heroic
-    bottles
+    umu-launcher
 
     # Compatibility layers
     wine # Windows compatibility layer
