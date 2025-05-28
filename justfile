@@ -4,18 +4,29 @@
 #
 ############################################################################
 
-deploy: nixos-rebuild switch --flake . --use-remote-sudo
+deploy: 
+  nixos-rebuild switch --flake . --use-remote-sudo
 
-debug: nixos-rebuild switch --flake . --use-remote-sudo --show-trace --verbose
+debug: 
+  nixos-rebuild switch --flake . --use-remote-sudo --show-trace --verbose
 
-up: nix flake update
+up: 
+  nix flake update
 
-upp: nix flake update $(i)
+upp: 
+  nix flake update $(i)
 
-history: nix profile history --profile /nix/var/nix/profiles/system
+history: 
+  nix profile history --profile /nix/var/nix/profiles/system
 
-repl: nix repl -f flake:nixpkgs
+repl:
+  nix repl -f flake:nixpkgs
 
-clean: sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 7d
+clean:
+  sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 7d
 
-gc: sudo nix store gc
+gc: 
+  sudo nix store gc
+
+gcc: 
+  sudo nix-collect-garbage -d
