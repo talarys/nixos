@@ -1,8 +1,3 @@
-# Custom packages, that can be defined similarly to ones from nixpkgs
-# You can build them using 'nix build .#example'
 pkgs: {
-  stability-matrix = pkgs.callPackage ./stability-matrix {
-    appimageTools = pkgs.appimageTools;
-    fetchzip = pkgs.fetchzip;
-  };
+  faugus-launcher = pkgs.callPackage ./faugus-launcher.nix {};
 }

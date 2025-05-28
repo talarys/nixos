@@ -18,6 +18,7 @@
     lutris
     heroic
     umu-launcher
+    faugus-launcher
 
     # Compatibility layers
     wine # Windows compatibility layer
