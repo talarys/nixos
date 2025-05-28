@@ -73,6 +73,7 @@
     epy
     scrcpy
     android-tools
+    devenv
 
     bun
     alejandra
