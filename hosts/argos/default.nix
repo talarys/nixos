@@ -10,6 +10,7 @@ in {
     modules.system
     modules.fonts
     modules.kde
+    modules.hyprland
     modules.nvidia
     modules.gaming
     modules.stylix

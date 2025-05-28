@@ -71,6 +71,8 @@
     hyperfine
     just
     epy
+    scrcpy
+    android-tools
 
     bun
     alejandra
