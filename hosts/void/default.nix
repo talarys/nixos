@@ -12,7 +12,6 @@ in {
   };
 
   networking.hostName = "void";
-  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     git
@@ -23,4 +22,6 @@ in {
     nil
     neovim
   ];
+
+  system.stateVersion = "24.11";
 }
