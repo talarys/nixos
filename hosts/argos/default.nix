@@ -1,8 +1,4 @@
-{
-  outputs,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   modules = import ../../modules/nixos;
 in {
   imports = [
@@ -21,7 +17,7 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = outputs.hostname;
+  networking.hostName = "argos";
   networking.networkmanager.enable = true;
 
   environment.systemPackages = with pkgs; [

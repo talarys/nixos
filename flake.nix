@@ -26,31 +26,47 @@
   outputs = inputs:
     with inputs; rec {
       inherit (self) outputs;
-      username = "talarys";
-      hostname = "argos";
-      system = "x86_64-linux";
-
-      packages = import ./pkgs nixpkgs.legacyPackages.${system};
 
       formatter = nixpkgs.legacyPackages.${system}.alejandra;
 
-      nixosConfigurations."${hostname}" = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./hosts/${hostname}
-          ./users/${username}
-          nix-index-database.nixosModules.nix-index
-          home-manager.nixosModules.home-manager
-          stylix.nixosModules.stylix
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.users.${username} = import ./users/${username}/home.nix;
-            home-manager.extraSpecialArgs = {inherit inputs outputs;};
-          }
-        ];
+      nixosConfigurations = {
+        argos = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {inherit inputs outputs;};
+          modules = [
+            ./hosts/argos
+            ./users/talarys
+            nix-index-database.nixosModules.nix-index
+            home-manager.nixosModules.home-manager
+            stylix.nixosModules.stylix
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.users.talarys = import ./users/talarys/home.nix;
+              home-manager.extraSpecialArgs = {inherit inputs outputs;};
+            }
+          ];
+        };
+
+        wsl = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {inherit inputs outputs;};
+          modules = [
+            ./hosts/wsl
+            ./users/talarys
+            nix-index-database.nixosModules.nix-index
+            home-manager.nixosModules.home-manager
+            stylix.nixosModules.stylix
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.users.talarys = import ./users/talarys/home.nix;
+              home-manager.extraSpecialArgs = {inherit inputs outputs;};
+            }
+          ];
+        };
       };
     };
 }
