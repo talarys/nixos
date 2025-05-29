@@ -1,6 +1,4 @@
 {
-  stylix.targets.kitty.enable = false;
-  stylix.targets.ghostty.enable = false;
   programs = {
     ghostty = {
       enable = true;

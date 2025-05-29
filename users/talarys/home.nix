@@ -10,6 +10,7 @@ in {
     modules.mpv
     modules.helix
     modules.terminals
+    modules.stylix
   ];
 
   programs = {
