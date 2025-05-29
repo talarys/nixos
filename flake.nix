@@ -59,17 +59,17 @@
           specialArgs = {inherit inputs outputs;};
           modules = [
             ./hosts/void
-            # ./users/talarys
+            ./users/null
             nix-index-database.nixosModules.nix-index
-            # home-manager.nixosModules.home-manager
+            home-manager.nixosModules.home-manager
             nixos-wsl.nixosModules.wsl
-            # {
-            #   home-manager.useGlobalPkgs = true;
-            #   home-manager.useUserPackages = true;
-            #   home-manager.backupFileExtension = "backup";
-            #   home-manager.users.talarys = import ./users/talarys/home.nix;
-            #   home-manager.extraSpecialArgs = {inherit inputs outputs;};
-            # }
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.users.null = import ./users/null/home.nix;
+              home-manager.extraSpecialArgs = {inherit inputs outputs;};
+            }
           ];
         };
       };
