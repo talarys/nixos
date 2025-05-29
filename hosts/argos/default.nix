@@ -6,6 +6,7 @@ in {
     modules.system
     modules.fonts
     modules.kde
+    modules.audio
     modules.hyprland
     modules.nvidia
     modules.gaming
@@ -14,6 +15,7 @@ in {
     modules.vpn
   ];
 
+  nix.settings.trusted-users = ["talarys"];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 

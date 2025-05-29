@@ -1,7 +1,15 @@
-{pkgs, ...}: {
-  wsl.enable = true;
-  wsl.defaultUser = "nixos";
-  programs.nix-ld.enable = true;
+{pkgs, ...}: let
+  modules = import ../../modules/nixos;
+in {
+  imports = [
+    modules.system
+  ];
+
+  wsl = {
+    enable = true;
+    defaultUser = "nixos";
+    docker-desktop.enable = true;
+  };
 
   networking.hostName = "void";
   nixpkgs.config.allowUnfree = true;
@@ -15,6 +23,4 @@
     nil
     neovim
   ];
-
-  system.stateVersion = "24.11"; # Did you read the comment?
 }
