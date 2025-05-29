@@ -54,22 +54,22 @@
           ];
         };
 
-        wsl = nixpkgs.lib.nixosSystem {
+        void = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = {inherit inputs outputs;};
           modules = [
-            ./hosts/wsl
-            ./users/talarys
+            ./hosts/void
+            # ./users/talarys
             nix-index-database.nixosModules.nix-index
-            home-manager.nixosModules.home-manager
+            # home-manager.nixosModules.home-manager
             nixos-wsl.nixosModules.wsl
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
-              home-manager.users.talarys = import ./users/talarys/home.nix;
-              home-manager.extraSpecialArgs = {inherit inputs outputs;};
-            }
+            # {
+            #   home-manager.useGlobalPkgs = true;
+            #   home-manager.useUserPackages = true;
+            #   home-manager.backupFileExtension = "backup";
+            #   home-manager.users.talarys = import ./users/talarys/home.nix;
+            #   home-manager.extraSpecialArgs = {inherit inputs outputs;};
+            # }
           ];
         };
       };
