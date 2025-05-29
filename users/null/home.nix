@@ -3,9 +3,9 @@
 in {
   imports = [
     modules.shell
-    modules.fish
     modules.git
     modules.helix
+    modules.nushell
   ];
 
   programs = {
