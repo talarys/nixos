@@ -7,7 +7,7 @@ in {
 
   wsl = {
     enable = true;
-    defaultUser = "nixos";
+    defaultUser = "null";
     docker-desktop.enable = true;
   };
 
