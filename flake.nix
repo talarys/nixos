@@ -29,7 +29,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim.url = "./nixvim";
+    nixvim.url = "github:talarys/nvix";
   };
 
   outputs = inputs:
