@@ -1,8 +1,6 @@
-{inputs, ...}: let
-  overlays = import ../../overlays {inherit inputs;};
-in {
+{...}: {
   nixpkgs = {
-    inherit overlays;
+    overlays = import ../../pkgs {};
     config.allowUnfree = true;
   };
 

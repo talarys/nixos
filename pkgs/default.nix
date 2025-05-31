@@ -1,3 +1,7 @@
-pkgs: {
-  faugus-launcher = pkgs.callPackage ./faugus-launcher.nix {};
-}
+{...}: [
+  (
+    final: prev: {
+      faugus-launcher = prev.callPackage ./faugus-launcher.nix {};
+    }
+  )
+]
