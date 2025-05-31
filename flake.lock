@@ -477,18 +477,14 @@
         "nixvim": "nixvim_2"
       },
       "locked": {
-        "lastModified": 1748703279,
-        "narHash": "sha256-v83rc7MffsBi8liyxkNeUTorPDjG7wg6XtVT9clDUME=",
-        "owner": "talarys",
-        "repo": "nixvim",
-        "rev": "59017cc968cc894091f98d8d294bafa863bd8d60",
-        "type": "github"
+        "path": "./nixvim",
+        "type": "path"
       },
       "original": {
-        "owner": "talarys",
-        "repo": "nixvim",
-        "type": "github"
-      }
+        "path": "./nixvim",
+        "type": "path"
+      },
+      "parent": []
     },
     "nixvim_2": {
       "inputs": {

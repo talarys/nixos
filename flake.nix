@@ -1,5 +1,7 @@
 {
   inputs = {
+    self.submodules = true;
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixos-wsl = {
@@ -27,7 +29,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim.url = "github:talarys/nixvim";
+    nixvim.url = "./nixvim";
   };
 
   outputs = inputs:
