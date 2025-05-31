@@ -13,6 +13,7 @@ in {
 
   networking.hostName = "void";
 
+  nix.settings.trusted-users = ["null"];
   environment.systemPackages = with pkgs; [
     git
     wget
