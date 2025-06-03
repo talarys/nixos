@@ -2,14 +2,12 @@
   modules = import ../../modules/nixos;
   containers = import ../../modules/containers;
 in {
-  imports = with modules; [
+  imports = with modules;
+  with containers; [
     system
     podman
+    audiobookshelf
   ];
-
-  virtualisation.oci-containers.containers = with containers; {
-    inherit lazylibrarian;
-  };
 
   wsl = {
     enable = true;
