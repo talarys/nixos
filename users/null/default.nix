@@ -1,5 +1,4 @@
 {pkgs, ...}: {
-  environment.shells = [pkgs.fish];
   programs.nix-index-database.comma.enable = true;
 
   users.users.null = {
