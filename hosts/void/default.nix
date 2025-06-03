@@ -1,16 +1,19 @@
 {pkgs, ...}: let
   modules = import ../../modules/nixos;
+  containers = import ../../modules/containers;
 in {
-  imports = [
-    modules.system
-    modules.audiobookshelf
-    modules.arr
+  imports = with modules; [
+    system
+    podman
   ];
+
+  virtualisation.oci-containers.containers = with containers; {
+    inherit lazylibrarian;
+  };
 
   wsl = {
     enable = true;
     defaultUser = "null";
-    docker-desktop.enable = true;
   };
 
   networking.hostName = "void";
