@@ -3,6 +3,7 @@
 in {
   imports = [
     modules.system
+    modules.audiobookshelf
   ];
 
   wsl = {

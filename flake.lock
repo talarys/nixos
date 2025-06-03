@@ -576,11 +576,11 @@
         "tokyodark": "tokyodark"
       },
       "locked": {
-        "lastModified": 1747973013,
-        "narHash": "sha256-JKf6yDTl7tR6pomrTU1WSiLLfpYT55anDd0oYwqsOHA=",
+        "lastModified": 1748966131,
+        "narHash": "sha256-jR5/+us0sCJMLEK2AbsEcXbx8/72BByh3jGCFq313co=",
         "owner": "talarys",
         "repo": "nvix",
-        "rev": "5cb27a4da439afc53790951df2749daad4ede0dd",
+        "rev": "f071ec34ebb0fb7557af3ee2fd461c26f252dea0",
         "type": "github"
       },
       "original": {
