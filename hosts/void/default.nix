@@ -4,6 +4,7 @@ in {
   imports = [
     modules.system
     modules.audiobookshelf
+    modules.arr
   ];
 
   wsl = {
