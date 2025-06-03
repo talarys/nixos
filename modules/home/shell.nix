@@ -90,5 +90,13 @@
     deadnix
     statix
     neovim
+    nixfmt-rfc-style
+  ];
+
+  home.shellAliases = {
+  };
+
+  home.sessionPath = [
+    "/mnt/c/Program Files/Neovim/bin/"
   ];
 }
