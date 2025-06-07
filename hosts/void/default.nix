@@ -1,12 +1,8 @@
 {pkgs, ...}: let
   modules = import ../../modules/nixos;
-  containers = import ../../modules/containers;
 in {
-  imports = with modules;
-  with containers; [
+  imports = with modules; [
     system
-    podman
-    audiobookshelf
   ];
 
   wsl = {
