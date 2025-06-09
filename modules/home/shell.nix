@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+  home.file.yazi = {
+    source = ../../config/yazi;
+    target = ".config/yazi";
+  };
+
   programs = {
     yazi = {
       #TODO yazi.flavours
