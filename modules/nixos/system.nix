@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   nixpkgs = {
     overlays = import ../../pkgs {inherit inputs;};
     config.allowUnfree = true;
@@ -9,6 +13,18 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   programs.nix-ld.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    git
+    wget
+    curl
+    alejandra
+    deadnix
+    statix
+    nil
+    neovim
+    mkpasswd
+  ];
 
   nix = {
     settings = {
@@ -21,11 +37,6 @@
       automatic = true;
       options = "--delete-older-than 7d";
     };
-  };
-
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
   };
 
   system.stateVersion = "24.11";

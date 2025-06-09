@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{...}: let
   modules = import ../../modules/nixos;
 in {
   imports = [
@@ -21,18 +21,4 @@ in {
 
   networking.hostName = "argos";
   networking.networkmanager.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    git
-    neovim
-    wget
-    vscode
-    mkpasswd
-    firefox
-
-    nil
-    alejandra
-    deadnix
-    statix
-  ];
 }

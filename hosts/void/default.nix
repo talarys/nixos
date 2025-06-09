@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{...}: let
   modules = import ../../modules/nixos;
 in {
   imports = with modules; [
@@ -13,15 +13,6 @@ in {
   networking.hostName = "void";
 
   nix.settings.trusted-users = ["null"];
-  environment.systemPackages = with pkgs; [
-    git
-    wget
-    alejandra
-    deadnix
-    statix
-    nil
-    neovim
-  ];
 
   system.stateVersion = "24.11";
 }
