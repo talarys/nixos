@@ -89,6 +89,7 @@
     scrcpy
     android-tools
     devenv
+    devbox
 
     bun
     alejandra
