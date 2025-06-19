@@ -92,6 +92,12 @@
     devbox
 
     bun
+    nodejs
+    pnpm
+    go
+    cargo
+    rustc
+
     alejandra
     deadnix
     statix
