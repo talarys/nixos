@@ -5,7 +5,7 @@
 ############################################################################
 
 rebuild: 
-  nixos-rebuild switch --flake . --sudo
+  nh os switch .
 
 debug: 
   nixos-rebuild switch --flake . --sudo --show-trace --verbose

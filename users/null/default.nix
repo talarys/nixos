@@ -1,6 +1,8 @@
 {pkgs, ...}: {
   programs.nix-index-database.comma.enable = true;
 
+  programs.nh.flake = "/home/null/nixos";
+
   users.users.null = {
     isNormalUser = true;
     extraGroups = ["wheel"];

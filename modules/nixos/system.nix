@@ -14,6 +14,12 @@
 
   programs.nix-ld.enable = true;
 
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 3";
+  };
+
   environment.systemPackages = with pkgs; [
     git
     wget
@@ -24,6 +30,7 @@
     nil
     neovim
     mkpasswd
+    nix-output-monitor
   ];
 
   nix = {
@@ -40,10 +47,6 @@
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       ];
-    };
-    gc = {
-      automatic = true;
-      options = "--delete-older-than 7d";
     };
   };
 
