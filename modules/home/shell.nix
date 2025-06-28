@@ -63,6 +63,12 @@
       enableFishIntegration = true;
       enableNushellIntegration = true;
     };
+
+    atuin = {
+      enable = true;
+      enableFishIntegration = true;
+      enableNushellIntegration = true;
+    };
   };
 
   home.packages = with pkgs; [
