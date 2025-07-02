@@ -69,6 +69,12 @@
       enableFishIntegration = true;
       enableNushellIntegration = true;
     };
+
+    pay-respects = {
+      enable = true;
+      enableFishIntegration = true;
+      enableNushellIntegration = true;
+    };
   };
 
   home.packages = with pkgs; [
