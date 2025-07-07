@@ -29,11 +29,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flox = {
-      url = "github:flox/flox";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixvim.url = "github:talarys/nvix";
   };
 
