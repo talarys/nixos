@@ -102,6 +102,8 @@
     android-tools
     devenv
     devbox
+    watchexec
+    entr
 
     bun
     nodejs
