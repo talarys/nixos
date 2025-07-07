@@ -115,6 +115,14 @@
     statix
     neovim
     nixfmt-rfc-style
+
+    stack
+    cabal-install
+    zlib
+    hpack
+    haskell-language-server
+    ghc
+    ghciwatch
   ];
 
   home.shellAliases = {
