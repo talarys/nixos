@@ -111,6 +111,7 @@
     go
     cargo
     rustc
+    zig
 
     alejandra
     deadnix
