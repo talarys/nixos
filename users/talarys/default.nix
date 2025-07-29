@@ -1,7 +1,26 @@
-{pkgs, ...}: {
-  environment.shells = [pkgs.fish];
+{
+  pkgs,
+  inputs,
+  outputs,
+  ...
+}: {
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+  ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    backupFileExtension = "backup";
+    users.talarys = import ./home.nix;
+    extraSpecialArgs = {inherit inputs outputs;};
+  };
+
+  environment.shells = with pkgs; [bash fish];
   programs.fish.enable = true;
   programs.nix-index-database.comma.enable = true;
+
+  programs.nh.flake = "/home/talarys/nixos";
 
   users.users.talarys = {
     isNormalUser = true;

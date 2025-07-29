@@ -46,15 +46,7 @@
             ./hosts/argos
             ./users/talarys
             nix-index-database.nixosModules.nix-index
-            home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
-              home-manager.users.talarys = import ./users/talarys/home.nix;
-              home-manager.extraSpecialArgs = {inherit inputs outputs;};
-            }
           ];
         };
 
@@ -65,15 +57,7 @@
             ./hosts/void
             ./users/null
             nix-index-database.nixosModules.nix-index
-            home-manager.nixosModules.home-manager
             nixos-wsl.nixosModules.wsl
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
-              home-manager.users.null = import ./users/null/home.nix;
-              home-manager.extraSpecialArgs = {inherit inputs outputs;};
-            }
           ];
         };
       };

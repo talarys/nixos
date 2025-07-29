@@ -1,4 +1,22 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  outputs,
+  ...
+}: {
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+  ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    backupFileExtension = "backup";
+    users.null = import ./home.nix;
+    extraSpecialArgs = {inherit inputs outputs;};
+  };
+
+  environment.shells = with pkgs; [bash nushell];
   programs.nix-index-database.comma.enable = true;
 
   programs.nh.flake = "/home/null/nixos";
