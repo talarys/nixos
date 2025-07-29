@@ -7,7 +7,7 @@
   };
 
   virtualisation.oci-containers.containers = {
-    lazylibrarian = {
+    audiobookshelf = {
       image = "advplyr/audiobookshelf:latest";
 
       environment = {
