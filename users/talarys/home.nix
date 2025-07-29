@@ -1,16 +1,16 @@
 {...}: let
   modules = import ../../modules/home;
 in {
-  imports = [
-    modules.browsers
-    modules.shell
-    modules.fish
-    modules.git
-    modules.programs
-    modules.mpv
-    modules.helix
-    modules.terminals
-    modules.stylix
+  imports = with modules; [
+    browsers
+    shell
+    fish
+    git
+    programs
+    mpv
+    helix
+    terminals
+    stylix
   ];
 
   programs = {

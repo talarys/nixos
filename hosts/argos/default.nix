@@ -1,18 +1,18 @@
 {...}: let
   modules = import ../../modules/nixos;
 in {
-  imports = [
+  imports = with modules; [
     ./hardware-configuration.nix
-    modules.system
-    modules.fonts
-    modules.kde
-    modules.audio
-    modules.hyprland
-    modules.nvidia
-    modules.gaming
-    modules.stylix
-    modules.virt
-    modules.vpn
+    system
+    fonts
+    kde
+    audio
+    hyprland
+    nvidia
+    gaming
+    stylix
+    virt
+    vpn
   ];
 
   nix.settings.trusted-users = ["talarys"];

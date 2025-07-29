@@ -1,11 +1,11 @@
 {...}: let
   modules = import ../../modules/home;
 in {
-  imports = [
-    modules.shell
-    modules.git
-    modules.helix
-    modules.nushell
+  imports = with modules; [
+    shell
+    git
+    helix
+    nushell
   ];
 
   programs = {
