@@ -30,13 +30,17 @@
     };
 
     nixvim.url = "github:talarys/nvix";
+
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
   outputs = inputs:
     with inputs; rec {
       inherit (self) outputs;
 
-      formatter = nixpkgs.legacyPackages.${system}.alejandra;
+      treefmtEval = treefmt-nix.lib.evalModule pkgs ./lib/treefmt.nix;
+
+      formatter.${system} = treefmtEval.config.build.wrapper;
 
       nixosConfigurations = {
         argos = nixpkgs.lib.nixosSystem {
