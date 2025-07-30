@@ -1,4 +1,4 @@
-{...}: let
+_: let
   modules = import ../../modules/nixos;
 in {
   imports = with modules; [

@@ -1,4 +1,4 @@
-{...}: let
+_: let
   modules = import ../../modules/home;
 in {
   imports = with modules; [
