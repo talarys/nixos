@@ -49,6 +49,13 @@
         formatting = treefmtEval.${pkgs.system}.config.build.check self;
       });
 
+      devShells = eachSystem (pkgs: {
+        default = import ./lib/dev-shell.nix {
+          inherit inputs;
+          system = pkgs.system;
+        };
+      });
+
       nixosConfigurations = {
         argos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
