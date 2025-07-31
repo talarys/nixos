@@ -126,6 +126,7 @@
     haskell-language-server
     ghc
     ghciwatch
+    pokego
   ];
 
   home.shellAliases = {
