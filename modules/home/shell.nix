@@ -101,6 +101,7 @@
     epy # Simple Python package manager
     pokego # Nintendo Switch interaction tool
     zlib # Compression library
+    opencode # LLM TUI
 
     # Programming Languages & Runtimes
     nodejs # JavaScript runtime
