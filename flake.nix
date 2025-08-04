@@ -37,7 +37,7 @@
   outputs = inputs:
     with inputs; let
       eachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f nixpkgs.legacyPackages.${system});
-      treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./lib/treefmt.nix);
+      treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
     in rec {
       inherit (self) outputs;
 
@@ -48,9 +48,9 @@
       });
 
       devShells = eachSystem (pkgs: {
-        default = import ./lib/dev-shell.nix {
+        default = import ./dev-shell.nix {
           inherit inputs;
-          system = pkgs.system;
+          inherit (pkgs) system;
         };
       });
 
