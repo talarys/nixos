@@ -1,5 +1,5 @@
-_: let
-  modules = import ../../modules/nixos;
+{self, ...}: let
+  modules = import "${self}/modules/nixos";
 in {
   imports = with modules; [
     system

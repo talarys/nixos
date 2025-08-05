@@ -1,5 +1,5 @@
-_: let
-  modules = import ../../modules/home;
+{self, ...}: let
+  modules = import "${self}/modules/home";
 in {
   imports = with modules; [
     browsers

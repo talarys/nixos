@@ -1,4 +1,5 @@
 {
+  self,
   pkgs,
   inputs,
   outputs,
@@ -13,7 +14,7 @@
     useUserPackages = true;
     backupFileExtension = "backup";
     users.talarys = import ./home.nix;
-    extraSpecialArgs = {inherit inputs outputs;};
+    extraSpecialArgs = {inherit inputs outputs self;};
   };
 
   environment.shells = with pkgs; [bash fish];

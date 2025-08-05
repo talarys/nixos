@@ -1,10 +1,11 @@
 {
+  self,
   inputs,
   pkgs,
   ...
 }: {
   nixpkgs = {
-    overlays = import ../../pkgs {inherit inputs;};
+    overlays = import "${self}/pkgs" {inherit inputs;};
     config.allowUnfree = true;
   };
 

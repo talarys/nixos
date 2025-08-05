@@ -1,6 +1,10 @@
-{pkgs, ...}: {
+{
+  self,
+  pkgs,
+  ...
+}: {
   home.file.yazi = {
-    source = ../../config/yazi;
+    source = "${self}/config/yazi";
     target = ".config/yazi";
   };
 

@@ -57,7 +57,7 @@
       nixosConfigurations = {
         argos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = {inherit inputs outputs;};
+          specialArgs = {inherit inputs outputs self;};
           modules = [
             ./hosts/argos
             ./users/talarys
@@ -68,7 +68,7 @@
 
         void = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = {inherit inputs outputs;};
+          specialArgs = {inherit inputs outputs self;};
           modules = [
             ./hosts/void
             ./users/null
