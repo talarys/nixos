@@ -36,7 +36,7 @@
 
   nix = {
     settings = {
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = ["nix-command" "flakes" "pipe-operators"];
       download-buffer-size = "30G";
       accept-flake-config = true;
       auto-optimise-store = true;
