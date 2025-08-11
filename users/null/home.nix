@@ -1,5 +1,5 @@
 {self, ...}: let
-  modules = import "${self}/modules/home";
+  modules = import "${self}/home";
 in {
   imports = with modules; [
     shell
