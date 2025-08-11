@@ -35,31 +35,27 @@
   outputs = inputs:
     with inputs; let
       lib = import ./lib {inherit inputs;};
-    in rec {
-      inherit (self) outputs;
+      specialArgs = {inherit inputs self;};
+    in {
       inherit (lib) formatter;
       inherit (lib) checks;
       inherit (lib) devShells;
 
       nixosConfigurations = {
-        argos = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = {inherit inputs outputs self;};
+        argos = lib.mkHost {
+          hostname = "argos";
+          username = "talarys";
+          inherit specialArgs;
           modules = [
-            ./hosts/argos
-            ./users/talarys
-            nix-index-database.nixosModules.nix-index
             stylix.nixosModules.stylix
           ];
         };
 
-        void = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = {inherit inputs outputs self;};
+        void = lib.mkHost {
+          hostname = "void";
+          username = "null";
+          inherit specialArgs;
           modules = [
-            ./hosts/void
-            ./users/null
-            nix-index-database.nixosModules.nix-index
             nixos-wsl.nixosModules.wsl
           ];
         };

@@ -2,7 +2,6 @@
   self,
   pkgs,
   inputs,
-  outputs,
   ...
 }: {
   imports = [
@@ -14,7 +13,7 @@
     useUserPackages = true;
     backupFileExtension = "backup";
     users.null = import ./home.nix;
-    extraSpecialArgs = {inherit inputs outputs self;};
+    extraSpecialArgs = {inherit inputs self;};
   };
 
   environment.shells = with pkgs; [bash nushell];
