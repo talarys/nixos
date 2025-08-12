@@ -136,11 +136,4 @@
     scrcpy # Android device mirroring
     android-tools # Android platform tools
   ];
-
-  home.shellAliases = {
-  };
-
-  home.sessionPath = [
-    "/mnt/c/Program Files/Neovim/bin/"
-  ];
 }

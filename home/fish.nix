@@ -28,13 +28,6 @@
         la = "eza -la --icons --group-directories-first";
         l = "eza -l --icons --group-directories-first";
         tree = "eza -T --icons --group-directories-first";
-        grep = "rg";
-        cat = "bat";
-        cp = "cp -i";
-        mv = "mv -i";
-        rm = "rm -i";
-        npm = "bun";
-        npx = "bunx";
       };
 
       plugins = [
