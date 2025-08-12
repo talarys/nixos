@@ -1,4 +1,4 @@
-{}: {
+{
   home.shellAliases = {
     cd = "z";
     grep = "rg";
