@@ -38,8 +38,11 @@
           statix = {
             priority = 2;
           };
-          alejandra = {
+          keep-sorted = {
             priority = 3;
+          };
+          alejandra = {
+            priority = 4;
           };
         };
       };
