@@ -1,13 +1,7 @@
-{self, ...}: let
-  modules = import "${self}/home";
-in {
-  imports = with modules; [
-    shell
-    git
-    helix
-    nushell
+{self, ...}: {
+  imports = [
+    "${self}/home/roles/dev.nix"
   ];
-
   programs = {
     home-manager.enable = true;
   };

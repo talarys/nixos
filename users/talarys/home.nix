@@ -1,16 +1,7 @@
-{self, ...}: let
-  modules = import "${self}/home";
-in {
-  imports = with modules; [
-    browsers
-    shell
-    fish
-    git
-    programs
-    mpv
-    helix
-    terminals
-    stylix
+{self, ...}: {
+  imports = [
+    "${self}/home/roles/dev.nix"
+    "${self}/home/roles/desktop.nix"
   ];
 
   programs = {
