@@ -7,7 +7,7 @@ with inputs.lib; let
     entries = builtins.readDir dir;
 
     # Filter for directories and .nix files
-    dirs = filterAttrs (name: type: type == "directory") entries;
+    dirs = filterAttrs (_name: type: type == "directory") entries;
     nixFiles = filterAttrs (name: type: type == "regular" && hasSuffix ".nix" name) entries;
 
     # Process directories recursively
