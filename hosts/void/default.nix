@@ -1,8 +1,5 @@
-{self, ...}: {
-  imports = [
-    ../common.nix
-    "${self}/modules"
-  ];
+{...}: {
+  imports = [../common.nix];
 
   system.roles = [
     "dev"
@@ -22,8 +19,4 @@
   };
 
   networking.hostName = "void";
-
-  nix.settings.trusted-users = ["talarys"];
-
-  system.stateVersion = "24.11";
 }

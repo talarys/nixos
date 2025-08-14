@@ -3,10 +3,9 @@
   config,
   ...
 }: let
-  roles = config.system.roles;
-  roleModules = builtins.map (role: "${self}/home/roles/${role}.nix") roles;
+  roleModules = builtins.map (role: "${self}/home/roles/${role}.nix") config.system.roles;
 in {
-  imports = [] ++ roleModules;
+  imports = roleModules;
   programs = {
     home-manager.enable = true;
   };
