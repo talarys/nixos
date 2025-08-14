@@ -3,6 +3,7 @@
 in {
   imports = with modules; [
     ./hardware-configuration.nix
+    roles
     system
     fonts
     kde
@@ -15,9 +16,12 @@ in {
     vpn
   ];
 
+  system.roles = [
+    "desktop"
+    "dev"
+  ];
+
   nix.settings.trusted-users = ["talarys"];
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "argos";
   networking.networkmanager.enable = true;

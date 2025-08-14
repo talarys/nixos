@@ -1,9 +1,17 @@
-{self, ...}: let
-  modules = import "${self}/modules/nixos";
-in {
-  imports = with modules; [
-    system
+{lib, ...}: {
+  imports = [../../modules];
+
+  system.roles = [
+    "dev"
   ];
+
+  modules = {
+    core = {
+      boot.enable = false;
+      hardened.enable = false;
+      networking.enable = false;
+    };
+  };
 
   wsl = {
     enable = true;

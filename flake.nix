@@ -57,6 +57,7 @@
           inherit specialArgs;
           modules = [
             nixos-wsl.nixosModules.wsl
+            stylix.nixosModules.stylix
           ];
         };
       };

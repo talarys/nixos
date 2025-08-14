@@ -1,30 +1,41 @@
 {
-  system.activationScripts = {
-    script.text = ''
-      install -d -m 755 /var/lib/containers/audiobookshelf/config -o root -g root
-      install -d -m 755 /var/lib/containers/audiobookshelf/metadata -o root -g root
-    '';
+  lib,
+  config,
+  ...
+}: let
+  cfg = config.modules.containers.audiobookshelf;
+in {
+  options.modules.containers.audiobookshelf = {
+    enable = lib.mkEnableOption "Audiobookshelf container configuration";
   };
+  config = lib.mkIf cfg.enable {
+    system.activationScripts = {
+      script.text = ''
+        install -d -m 755 /var/lib/containers/audiobookshelf/config -o root -g root
+        install -d -m 755 /var/lib/containers/audiobookshelf/metadata -o root -g root
+      '';
+    };
 
-  virtualisation.oci-containers.containers = {
-    audiobookshelf = {
-      image = "advplyr/audiobookshelf:latest";
+    virtualisation.oci-containers.containers = {
+      audiobookshelf = {
+        image = "advplyr/audiobookshelf:latest";
 
-      environment = {
-        TZ = "Europe/Madrid";
+        environment = {
+          TZ = "Europe/Madrid";
+        };
+
+        volumes = [
+          "/var/lib/containers/audiobookshelf/config:/config"
+          "/var/lib/containers/audiobookshelf/metadata:/metadata"
+          "/mnt:/mnt"
+        ];
+
+        ports = [
+          "13378:80"
+        ];
+
+        autoStart = true;
       };
-
-      volumes = [
-        "/var/lib/containers/audiobookshelf/config:/config"
-        "/var/lib/containers/audiobookshelf/metadata:/metadata"
-        "/mnt:/mnt"
-      ];
-
-      ports = [
-        "13378:80"
-      ];
-
-      autoStart = true;
     };
   };
 }
