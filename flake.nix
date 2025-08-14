@@ -44,7 +44,6 @@
       nixosConfigurations = {
         argos = lib.mkHost {
           hostname = "argos";
-          username = "talarys";
           inherit specialArgs;
           modules = [
             stylix.nixosModules.stylix
@@ -53,7 +52,6 @@
 
         void = lib.mkHost {
           hostname = "void";
-          username = "null";
           inherit specialArgs;
           modules = [
             nixos-wsl.nixosModules.wsl

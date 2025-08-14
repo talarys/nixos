@@ -1,5 +1,8 @@
 {self, ...}: {
-  imports = ["${self}/modules"];
+  imports = [
+    ../common.nix
+    "${self}/modules"
+  ];
 
   system.roles = [
     "desktop"

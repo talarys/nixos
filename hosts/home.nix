@@ -12,8 +12,8 @@ in {
   };
 
   home = {
-    username = "null";
-    homeDirectory = "/home/null";
+    username = "talarys";
+    homeDirectory = "/home/talarys";
   };
 
   systemd.user.startServices = "sd-switch";

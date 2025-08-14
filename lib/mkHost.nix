@@ -1,7 +1,6 @@
 {inputs}: {
   mkHost = {
     hostname,
-    username,
     system ? "x86_64-linux",
     specialArgs ? {},
     modules ? [],
@@ -12,7 +11,6 @@
       modules =
         [
           "${inputs.self}/hosts/${hostname}"
-          "${inputs.self}/users/${username}"
           inputs.nix-index-database.nixosModules.nix-index
           {
             nixpkgs = {

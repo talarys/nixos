@@ -1,5 +1,8 @@
 {self, ...}: {
-  imports = ["${self}/modules"];
+  imports = [
+    ../common.nix
+    "${self}/modules"
+  ];
 
   system.roles = [
     "dev"
@@ -15,12 +18,12 @@
 
   wsl = {
     enable = true;
-    defaultUser = "null";
+    defaultUser = "talarys";
   };
 
   networking.hostName = "void";
 
-  nix.settings.trusted-users = ["null"];
+  nix.settings.trusted-users = ["talarys"];
 
   system.stateVersion = "24.11";
 }
