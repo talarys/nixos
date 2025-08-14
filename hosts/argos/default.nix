@@ -1,20 +1,5 @@
-{self, ...}: let
-  modules = import "${self}/modules/nixos";
-in {
-  imports = with modules; [
-    ./hardware-configuration.nix
-    roles
-    system
-    fonts
-    kde
-    audio
-    hyprland
-    nvidia
-    gaming
-    stylix
-    virt
-    vpn
-  ];
+{self, ...}: {
+  imports = ["${self}/modules"];
 
   system.roles = [
     "desktop"

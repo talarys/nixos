@@ -1,5 +1,5 @@
-{lib, ...}: {
-  imports = [../../modules];
+{self, ...}: {
+  imports = ["${self}/modules"];
 
   system.roles = [
     "dev"
