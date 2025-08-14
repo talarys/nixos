@@ -6,7 +6,6 @@
     ../modules/core/locale.nix
     ../modules/core/networking.nix
     ../modules/core/nix.nix
-    ../modules/core/overlays.nix
     ../modules/core/roles.nix
     ../modules/desktop/audio.nix
     ../modules/desktop/fonts.nix

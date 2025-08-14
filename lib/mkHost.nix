@@ -14,6 +14,13 @@
           "${inputs.self}/hosts/${hostname}"
           "${inputs.self}/users/${username}"
           inputs.nix-index-database.nixosModules.nix-index
+          {
+            nixpkgs = {
+              overlays = [
+                (import "${inputs.self}/overlays" {inherit inputs;})
+              ];
+            };
+          }
         ]
         ++ modules;
     };
