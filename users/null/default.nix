@@ -2,6 +2,7 @@
   self,
   pkgs,
   inputs,
+  config,
   ...
 }: {
   imports = [
@@ -12,7 +13,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
-    users.null = import ./home.nix;
+    users.null = import ./home.nix {inherit config self;};
     extraSpecialArgs = {inherit inputs self;};
   };
 
