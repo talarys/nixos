@@ -18,12 +18,38 @@
     extraSpecialArgs = {inherit inputs self;};
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   environment.shells = with pkgs; [bash nushell];
+
   programs.nix-index-database.comma.enable = true;
 
-  programs.nh.flake = "/home/talarys/nixos";
+  programs.nix-ld.enable = true;
 
-  nix.settings.trusted-users = ["talarys"];
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 3";
+    flake = "/home/talarys/nixos";
+  };
+
+  nix = {
+    settings = {
+      trusted-users = ["talarys"];
+      experimental-features = ["nix-command" "flakes" "pipe-operators"];
+      download-buffer-size = "30G";
+      accept-flake-config = true;
+      auto-optimise-store = true;
+      substituters = [
+        "https://cache.nixos.org/"
+        "https://nix-community.c.achix.org"
+      ];
+      trusted-public-keys = [
+        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
+    };
+  };
 
   users.users.talarys = {
     isNormalUser = true;
@@ -31,6 +57,21 @@
     hashedPassword = "$6$5LmYUUbAfFd.ru3K$aCWG8.Vw2WXtkiWFav/Z/Vu44x65oRb5TU41s.QG3nrFrACCPovyRdFuqIixo0hPAbAVY9cgr36gu6l4Kvtqt0";
     shell = pkgs.nushell;
   };
+
+  environment.systemPackages = with pkgs; [
+    git
+    wget
+    curl
+    alejandra
+    deadnix
+    statix
+    nil
+    neovim
+    mkpasswd
+    nix-output-monitor
+    sops
+    age
+  ];
 
   system.stateVersion = "24.11";
 }
