@@ -12,6 +12,7 @@
         [
           "${inputs.self}/hosts/${hostname}"
           inputs.nix-index-database.nixosModules.nix-index
+          inputs.stylix.nixosModules.stylix
           {
             nixpkgs = {
               overlays = [

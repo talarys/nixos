@@ -51,9 +51,7 @@
         argos = lib.mkHost {
           hostname = "argos";
           inherit specialArgs;
-          modules = [
-            stylix.nixosModules.stylix
-          ];
+          modules = [];
         };
 
         void = lib.mkHost {
@@ -61,7 +59,6 @@
           inherit specialArgs;
           modules = [
             nixos-wsl.nixosModules.wsl
-            stylix.nixosModules.stylix
           ];
         };
       };
