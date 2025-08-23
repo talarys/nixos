@@ -61,6 +61,14 @@
             nixos-wsl.nixosModules.wsl
           ];
         };
+
+        atlas = lib.mkHost {
+          hostname = "atlas";
+          inherit specialArgs;
+          modules = [
+            disko.nixosModules.disko
+          ];
+        };
       };
     };
 }
