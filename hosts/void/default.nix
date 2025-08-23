@@ -16,6 +16,7 @@
   wsl = {
     enable = true;
     defaultUser = "talarys";
+    docker-desktop.enable = true;
   };
 
   networking.hostName = "void";
