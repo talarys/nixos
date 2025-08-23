@@ -13,6 +13,9 @@
 in
   pkgs.mkShell {
     name = "nixos-dev";
+    nix.config = {
+      experimental-features = ["nix-command" "flakes" "pipe-operators"];
+    };
     packages = with pkgs; [
       # Nix tools
       nixfmt-rfc-style # Formatter
