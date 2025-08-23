@@ -3,6 +3,10 @@
   pkgs,
   ...
 }: {
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
+
   home.file.yazi = {
     source = "${self}/config/yazi";
     target = ".config/yazi";
