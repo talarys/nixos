@@ -1,5 +1,8 @@
 {...}: {
-  imports = [../common.nix];
+  imports = [
+    ../common.nix
+    ./hardware-configuration.nix
+  ];
 
   system.roles = [
     "desktop"
