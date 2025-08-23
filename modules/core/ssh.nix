@@ -42,6 +42,11 @@ in {
       #     publicKey = "ssh-rsa AAAAB3NzaC1yc2E...";
       #   };
       # };
+
+      extraConfig = ''
+        Host github.com
+          IdentityFile ~/.ssh/github_ssh
+      '';
     };
   };
 
