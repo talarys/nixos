@@ -71,6 +71,7 @@
     nix-output-monitor
     sops
     age
+    ssh-to-age
   ];
 
   system.stateVersion = "24.11";
