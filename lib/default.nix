@@ -3,8 +3,6 @@
   inherit (import ./eachSystem.nix {inherit inputs;}) eachSystem;
   inherit (import ./treefmt.nix {inherit inputs eachSystem;}) treefmtEval;
   inherit (import ./mkHost.nix {inherit inputs;}) mkHost;
-  inherit (import ./importFilesRec.nix {inherit inputs;}) importFilesRec;
-  inherit (import ./importFiles.nix {inherit inputs;}) importFiles;
 
   formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
 
