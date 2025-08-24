@@ -16,27 +16,23 @@ in
     NIX_CONFIG = "experimental-features = nix-command flakes";
     packages = with pkgs; [
       # Nix tools
-      nixfmt-rfc-style # Formatter
+      alejandra # Nix code formatter
       deadnix # Dead code detection
+      statix # Nix static analysis
       nixd # Nix language server
-      nil # Alternative Nix language server
       nh # Nix helper
-      nix-diff # Compare Nix derivations
-      nix-tree # Visualize Nix dependencies
+      disko # Disk partitioning tool
 
       # Code editing
-      helix # Your editor
+      helix
+      neovim
 
       # General utilities
       git
-      ripgrep
-      jq
-      tree
     ];
 
     shellHook = ''
       echo "Welcome to the NixOS development shell!"
       echo "System: ${system}"
-      echo "Tools available: nixfmt, deadnix, nixd, nil, nh, nix-diff, nix-tree, helix, git, ripgrep, jq, tree"
     '';
   }
