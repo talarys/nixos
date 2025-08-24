@@ -1,7 +1,7 @@
 {
   disko.devices = {
     disk = {
-      my-disk = {
+      basic = {
         device = "/dev/sda";
         type = "disk";
         content = {
