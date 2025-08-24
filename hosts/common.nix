@@ -36,7 +36,7 @@
   nix = {
     settings = {
       trusted-users = ["talarys"];
-      experimental-features = ["nix-command" "flakes" "pipe-operators"];
+      experimental-features = ["nix-command" "flakes"];
       download-buffer-size = "30G";
       accept-flake-config = true;
       auto-optimise-store = true;

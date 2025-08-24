@@ -13,7 +13,7 @@
 in
   pkgs.mkShell {
     name = "nixos-dev";
-    NIX_CONFIG = "experimental-features = nix-command flakes pipe-operators";
+    NIX_CONFIG = "experimental-features = nix-command flakes";
     packages = with pkgs; [
       # Nix tools
       nixfmt-rfc-style # Formatter
