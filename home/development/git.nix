@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{config, ...}: {
   programs.git = {
     enable = true;
     userName = "talarys";
@@ -104,15 +100,4 @@
       ];
     };
   };
-
-  # Optional: Install git-related tools
-  home.packages = with pkgs; [
-    git-lfs # Large file support
-    gh # GitHub CLI
-    delta # Syntax-highlighting pager
-    tig # Text-mode interface for Git
-    lazygit # Terminal UI for Git
-    gitui # Another terminal UI for Git
-    # watchman # Needed for core.fsmonitor
-  ];
 }

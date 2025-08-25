@@ -24,7 +24,12 @@
 
     # Version Control
     git # Distributed version control system
+    git-lfs # Large file support
     gh # GitHub CLI
+    delta # Syntax-highlighting pager
+    tig # Text-mode interface for Git
+    lazygit # Terminal UI for Git
+    gitui # Another terminal UI for Git
 
     # Development Tools
     hyperfine # Command-line benchmarking tool
