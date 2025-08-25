@@ -14,6 +14,9 @@
       networking.enable = false;
       hardened.enable = false;
     };
+    containers = {
+      audiobookshelf.enable = true;
+    };
   };
 
   virtualisation.hypervGuest.enable = true;
