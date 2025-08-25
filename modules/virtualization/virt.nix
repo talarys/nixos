@@ -5,10 +5,10 @@
   ...
 }:
 with lib; let
-  cfg = config.modules.virtualization.virt;
+  cfg = config.modules.virtualisation.virt;
 in {
-  options.modules.virtualization.virt = {
-    enable = mkEnableOption "Virtualization configuration";
+  options.modules.virtualisation.virt = {
+    enable = mkEnableOption "Virtualisation configuration";
   };
   config = mkIf cfg.enable {
     users.users.talarys.extraGroups = ["libvirtd" "kvm"];
