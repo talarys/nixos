@@ -12,6 +12,7 @@
   modules = {
     core = {
       networking.enable = false;
+      hardened.enable = false;
     };
   };
 
