@@ -14,6 +14,9 @@
       networking.enable = false;
       hardened.enable = false;
     };
+    virtualisation = {
+      podman.enable = true;
+    };
     containers = {
       audiobookshelf.enable = true;
     };
