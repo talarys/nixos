@@ -1,7 +1,7 @@
 {...}: {
   imports = [
+    ../../disko/simple.nix
     ../common.nix
-    ./disko.nix
     ./hardware-configuration.nix
   ];
 
