@@ -1,5 +1,6 @@
 {
   imports = [
+    ../yazi.nix
     ../aliases.nix
     ../git.nix
     ../helix.nix

@@ -1,25 +1,5 @@
-{
-  self,
-  pkgs,
-  ...
-}: {
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
-
-  home.file.yazi = {
-    source = "${self}/config/yazi";
-    target = ".config/yazi";
-  };
-
+{pkgs, ...}: {
   programs = {
-    yazi = {
-      #TODO yazi.flavours
-      enable = true;
-      enableFishIntegration = true;
-      enableNushellIntegration = true;
-    };
-
     starship = {
       enable = true;
       enableFishIntegration = true;
