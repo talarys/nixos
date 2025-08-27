@@ -54,6 +54,8 @@
     stack # Haskell build tool
     cabal-install # Haskell package manager
     ghc # Glasgow Haskell Compiler
+    stylua # Lua formatter
+    lua-language-server # Lua language server
 
     # Code Quality & Formatting
     alejandra # Nix formatter
