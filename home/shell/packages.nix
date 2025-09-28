@@ -56,6 +56,7 @@
     ghc # Glasgow Haskell Compiler
     stylua # Lua formatter
     lua-language-server # Lua language server
+    gcc # GNU Compiler Collection
 
     # Code Quality & Formatting
     alejandra # Nix formatter
