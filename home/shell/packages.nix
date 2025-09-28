@@ -58,6 +58,7 @@
     lua-language-server # Lua language server
     gcc # GNU Compiler Collection
     gnumake # GNU Make
+    clang-tools # Clang tools
 
     # Code Quality & Formatting
     alejandra # Nix formatter
