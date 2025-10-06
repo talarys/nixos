@@ -298,11 +298,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1759768308,
-        "narHash": "sha256-0E1DgdKgS6IJvztAsvw3QY13o00GbnAF78NRxKA4+iM=",
+        "lastModified": 1759772434,
+        "narHash": "sha256-K5jTzqRyvQ/dpRePpRBdB4I37toDiXlAq1VONIhY6VI=",
         "owner": "talarys",
         "repo": "nvix",
-        "rev": "2056a9c482cd309a8e5288d06d258493b7095d52",
+        "rev": "4d9e0bc5e41591e2adf27849ca851024bbeacecf",
         "type": "github"
       },
       "original": {
