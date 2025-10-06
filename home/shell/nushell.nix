@@ -5,7 +5,7 @@
       extraConfig = ''
         $env.config.show_banner = false
       '';
-      shellAliases = {};
+      shellAliases = { };
     };
   };
 }

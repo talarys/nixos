@@ -4,7 +4,8 @@
   pkgs,
   ...
 }:
-with lib; {
+with lib;
+{
   options.modules.core.hardened.enable = mkOption {
     type = types.bool;
     default = true;
@@ -20,7 +21,7 @@ with lib; {
 
     boot.kernelPackages = mkDefault pkgs.linuxPackages_hardened;
 
-    nix.settings.allowed-users = mkDefault ["@users"];
+    nix.settings.allowed-users = mkDefault [ "@users" ];
 
     environment.memoryAllocator.provider = mkDefault "scudo";
     environment.variables.SCUDO_OPTIONS = mkDefault "ZeroContents=1";

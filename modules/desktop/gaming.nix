@@ -4,9 +4,11 @@
   config,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.modules.desktop.gaming;
-in {
+in
+{
   options.modules.desktop.gaming = {
     enable = mkEnableOption "gaming configuration";
   };

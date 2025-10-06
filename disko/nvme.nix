@@ -7,7 +7,8 @@ let
     "discard=async"
     "space_cache=v2"
   ];
-in {
+in
+{
   disko.devices = {
     disk = {
       nvme = {
@@ -26,14 +27,14 @@ in {
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
-                mountOptions = ["umask=0077"];
+                mountOptions = [ "umask=0077" ];
               };
             };
             root = {
               size = "100%";
               content = {
                 type = "btrfs";
-                extraArgs = ["-f"];
+                extraArgs = [ "-f" ];
                 subvolumes = {
                   "@" = {
                     mountpoint = "/";

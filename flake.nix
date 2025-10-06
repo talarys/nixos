@@ -38,11 +38,14 @@
     };
   };
 
-  outputs = inputs:
-    with inputs; let
-      lib = import ./lib {inherit inputs;};
-      specialArgs = {inherit inputs self;};
-    in {
+  outputs =
+    inputs:
+    with inputs;
+    let
+      lib = import ./lib { inherit inputs; };
+      specialArgs = { inherit inputs self; };
+    in
+    {
       inherit (lib) formatter;
       inherit (lib) checks;
       inherit (lib) devShells;
@@ -51,7 +54,7 @@
         argos = lib.mkHost {
           hostname = "argos";
           inherit specialArgs;
-          modules = [];
+          modules = [ ];
         };
 
         void = lib.mkHost {
@@ -65,7 +68,7 @@
         atlas = lib.mkHost {
           hostname = "atlas";
           inherit specialArgs;
-          modules = [];
+          modules = [ ];
         };
       };
     };

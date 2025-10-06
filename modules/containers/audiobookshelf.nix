@@ -2,9 +2,11 @@
   lib,
   config,
   ...
-}: let
+}:
+let
   cfg = config.modules.containers.audiobookshelf;
-in {
+in
+{
   options.modules.containers.audiobookshelf = {
     enable = lib.mkEnableOption "Audiobookshelf container configuration";
   };

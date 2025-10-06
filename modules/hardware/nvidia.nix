@@ -3,14 +3,16 @@
   lib,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.modules.hardware.nvidia;
-in {
+in
+{
   options.modules.hardware.nvidia = {
     enable = mkEnableOption "NVIDIA hardware support";
   };
   config = mkIf cfg.enable {
-    services.xserver.videoDrivers = ["nvidia"];
+    services.xserver.videoDrivers = [ "nvidia" ];
     hardware.graphics.enable = true;
     hardware.graphics.enable32Bit = true;
     hardware = {

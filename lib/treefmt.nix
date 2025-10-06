@@ -1,16 +1,17 @@
 {
   inputs,
   eachSystem,
-}: {
-  treefmtEval = eachSystem (pkgs:
-    inputs.treefmt-nix.lib.evalModule pkgs
-    {
+}:
+{
+  treefmtEval = eachSystem (
+    pkgs:
+    inputs.treefmt-nix.lib.evalModule pkgs {
       projectRootFile = "flake.nix";
       programs = {
-        alejandra.enable = true;
         deadnix.enable = true;
         statix.enable = true;
         keep-sorted.enable = true;
+        nixfmt.enable = true;
       };
       settings = {
         global.excludes = [
@@ -41,10 +42,11 @@
           keep-sorted = {
             priority = 3;
           };
-          alejandra = {
+          nixfmt = {
             priority = 4;
           };
         };
       };
-    });
+    }
+  );
 }

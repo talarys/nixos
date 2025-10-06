@@ -4,9 +4,11 @@
   pkgs,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.modules.desktop.audio;
-in {
+in
+{
   options.modules.desktop.audio = {
     enable = mkEnableOption "audio support";
   };

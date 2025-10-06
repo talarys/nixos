@@ -3,9 +3,11 @@
   lib,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.modules.desktop.kde;
-in {
+in
+{
   options.modules.desktop.kde = {
     enable = mkEnableOption "KDE Plasma configuration";
   };

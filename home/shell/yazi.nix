@@ -1,11 +1,13 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   flavors = pkgs.fetchFromGitHub {
     owner = "yazi-rs";
     repo = "flavors";
     rev = "main";
     sha256 = "sha256-xMaZoWSetXHg772cwqBTEcdXdnGYQVaiUDcjKk9r53w=";
   };
-in {
+in
+{
   home.packages = with pkgs; [
     yazi
     rich-cli

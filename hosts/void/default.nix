@@ -1,5 +1,6 @@
-{...}: {
-  imports = [../common.nix];
+{ ... }:
+{
+  imports = [ ../common.nix ];
 
   system.roles = [
     "dev"

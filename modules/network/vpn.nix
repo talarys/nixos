@@ -4,9 +4,11 @@
   config,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.modules.nixos.core.vpn;
-in {
+in
+{
   options.modules.nixos.core.vpn = {
     enable = mkEnableOption "VPN support for NixOS";
   };
@@ -24,8 +26,14 @@ in {
     networking.firewall = {
       enable = true;
       checkReversePath = "loose"; # Critical for VPNs
-      allowedUDPPorts = [443 1194]; # ProtonVPN ports
-      allowedTCPPorts = [443 1194];
+      allowedUDPPorts = [
+        443
+        1194
+      ]; # ProtonVPN ports
+      allowedTCPPorts = [
+        443
+        1194
+      ];
     };
   };
 }

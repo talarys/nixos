@@ -3,9 +3,11 @@
   config,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.modules.core.ssh;
-in {
+in
+{
   options.modules.core.ssh = {
     server = {
       enable = mkOption {

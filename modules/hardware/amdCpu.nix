@@ -2,16 +2,18 @@
   config,
   lib,
   ...
-}: let
+}:
+let
   cfg = config.modules.hardware.amdCpu;
 in
-  with lib; {
-    options.modules.hardware.amdCpu = {
-      enable = mkEnableOption "AMD CPU microcode updates";
+with lib;
+{
+  options.modules.hardware.amdCpu = {
+    enable = mkEnableOption "AMD CPU microcode updates";
+  };
+  config = mkIf cfg.enable {
+    hardware = {
+      cpu.amd.updateMicrocode = true;
     };
-    config = mkIf cfg.enable {
-      hardware = {
-        cpu.amd.updateMicrocode = true;
-      };
-    };
-  }
+  };
+}

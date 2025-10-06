@@ -4,9 +4,11 @@
   pkgs,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.modules.desktop.fonts;
-in {
+in
+{
   options.modules.desktop.fonts = {
     enable = mkEnableOption "font configuration";
   };
@@ -25,10 +27,19 @@ in {
 
         # Default fonts
         defaultFonts = {
-          serif = ["Noto Serif" "Liberation Serif"];
-          sansSerif = ["Noto Sans" "Liberation Sans"];
-          monospace = ["JetBrains Mono" "Liberation Mono"];
-          emoji = ["Noto Color Emoji"];
+          serif = [
+            "Noto Serif"
+            "Liberation Serif"
+          ];
+          sansSerif = [
+            "Noto Sans"
+            "Liberation Sans"
+          ];
+          monospace = [
+            "JetBrains Mono"
+            "Liberation Mono"
+          ];
+          emoji = [ "Noto Color Emoji" ];
         };
       };
 

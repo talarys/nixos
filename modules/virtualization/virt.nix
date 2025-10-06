@@ -4,15 +4,20 @@
   config,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.modules.virtualisation.virt;
-in {
+in
+{
   options.modules.virtualisation.virt = {
     enable = mkEnableOption "Virtualisation configuration";
   };
   config = mkIf cfg.enable {
-    users.users.talarys.extraGroups = ["libvirtd" "kvm"];
-    boot.kernelModules = ["kvm-amd"];
+    users.users.talarys.extraGroups = [
+      "libvirtd"
+      "kvm"
+    ];
+    boot.kernelModules = [ "kvm-amd" ];
 
     environment.systemPackages = with pkgs; [
       qemu_kvm
@@ -35,7 +40,7 @@ in {
           runAsRoot = true;
           swtpm.enable = true;
           ovmf.enable = true;
-          ovmf.packages = [pkgs.OVMFFull.fd];
+          ovmf.packages = [ pkgs.OVMFFull.fd ];
         };
       };
       spiceUSBRedirection.enable = true;

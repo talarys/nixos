@@ -3,9 +3,11 @@
   config,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.modules.core.locale;
-in {
+in
+{
   options.modules.core.locale.enable = mkOption {
     type = types.bool;
     default = true;

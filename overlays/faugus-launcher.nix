@@ -71,25 +71,25 @@ python3Packages.buildPythonApplication rec {
     makeWrapperArgs+=(
       "''${gappsWrapperArgs[@]}"
       --prefix PATH : "${
-      lib.makeBinPath [
-        icoextract
-        imagemagick
-        libcanberra-gtk3
-        umu-launcher
-        xdg-utils
-      ]
-    }"
+        lib.makeBinPath [
+          icoextract
+          imagemagick
+          libcanberra-gtk3
+          umu-launcher
+          xdg-utils
+        ]
+      }"
     )
   '';
 
-  passthru.updateScript = nix-update-script {};
+  passthru.updateScript = nix-update-script { };
 
   meta = {
     description = "Simple and lightweight app for running Windows games using UMU-Launcher";
     homepage = "https://github.com/Faugus/faugus-launcher";
     changelog = "https://github.com/Faugus/faugus-launcher/releases/tag/${version}";
     license = lib.licenses.mit;
-    maintainers = with lib.maintainers; [RoGreat];
+    maintainers = with lib.maintainers; [ RoGreat ];
     mainProgram = "faugus-launcher";
     platforms = lib.platforms.linux;
   };

@@ -1,4 +1,5 @@
-{inputs, ...}: {
+{ inputs, ... }:
+{
   imports = [
     # inputs.zen-browser.homeModules.beta
     inputs.zen-browser.homeModules.twilight
