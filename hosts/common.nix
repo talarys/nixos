@@ -1,5 +1,4 @@
 {
-  self,
   pkgs,
   inputs,
   config,
@@ -8,15 +7,15 @@
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    "${self}/modules"
+    "${inputs.self}/modules"
   ];
 
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
-    users.talarys = import ./home.nix { inherit config self; };
-    extraSpecialArgs = { inherit inputs self; };
+    users.talarys = import ./home.nix { inherit inputs config; };
+    extraSpecialArgs = { inherit inputs; };
   };
 
   nixpkgs.config.allowUnfree = true;

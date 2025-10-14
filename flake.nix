@@ -40,10 +40,9 @@
 
   outputs =
     inputs:
-    with inputs;
     let
       lib = import ./lib { inherit inputs; };
-      specialArgs = { inherit inputs self; };
+      specialArgs = { inherit inputs; };
     in
     {
       inherit (lib) formatter;
@@ -61,7 +60,7 @@
           hostname = "void";
           inherit specialArgs;
           modules = [
-            nixos-wsl.nixosModules.wsl
+            inputs.nixos-wsl.nixosModules.wsl
           ];
         };
 
