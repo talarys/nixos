@@ -9,6 +9,7 @@
     unzip # Extract ZIP archives
     zip # Create ZIP archives
     p7zip # 7z compression utility
+    ffmpeg # Multimedia framework
 
     # Disk Usage Analyzers
     dua # Disk usage analyzer with TUI
@@ -61,6 +62,8 @@
     gnumake # GNU Make
     clang-tools # Clang tools
     uv # Python package manager
+    ruff # Python linter & formatter
+    basedpyright # Python lsp
 
     # Code Quality & Formatting
     alejandra # Nix formatter
