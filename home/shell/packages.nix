@@ -60,6 +60,7 @@
     gcc # GNU Compiler Collection
     gnumake # GNU Make
     clang-tools # Clang tools
+    uv # Python package manager
 
     # Code Quality & Formatting
     alejandra # Nix formatter
