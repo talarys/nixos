@@ -4,7 +4,7 @@ let
     owner = "yazi-rs";
     repo = "flavors";
     rev = "main";
-    sha256 = "sha256-xMaZoWSetXHg772cwqBTEcdXdnGYQVaiUDcjKk9r53w=";
+    sha256 = "sha256-bavHcmeGZ49nNeM+0DSdKvxZDPVm3e6eaNmfmwfCid0=";
   };
 in
 {
