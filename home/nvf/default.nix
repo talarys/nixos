@@ -3,7 +3,8 @@
   inputs,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     inputs.nvf.homeManagerModules.default
     ./options.nix
@@ -13,6 +14,8 @@
     ./keymaps.nix
     ./utils.nix
     ./mini.nix
+    ./diagnostics.nix
+    ./lsp.nix
   ];
 
   programs.nvf = {
