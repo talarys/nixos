@@ -8,14 +8,12 @@
   imports = [
     inputs.nvf.homeManagerModules.default
     ./options.nix
+    ./diagnostics.nix
     ./languages.nix
-    ./picker.nix
+    ./lsp.nix
     ./snacks.nix
     ./keymaps.nix
     ./utils.nix
-    ./mini.nix
-    ./diagnostics.nix
-    ./lsp.nix
   ];
 
   programs.nvf = {

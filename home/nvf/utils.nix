@@ -1,9 +1,11 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.nvf.settings.vim = {
     undoFile.enable = true;
     utility = {
       motion.flash-nvim.enable = true;
       outline.aerial-nvim.enable = true;
+      smart-splits.enable = true;
     };
     tabline.nvimBufferline.enable = true;
     notes.todo-comments.enable = true;
