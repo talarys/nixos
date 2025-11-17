@@ -25,7 +25,6 @@
       css.enable = true;
       gleam.enable = true;
       go.enable = true;
-      haskell.enable = true;
       html.enable = true;
       lua.enable = true;
       nix.enable = true;
@@ -35,6 +34,11 @@
       svelte.enable = true;
       tailwind.enable = true;
       zig.enable = true;
+
+      haskell = {
+        enable = true;
+        dap.enable = false;
+      };
 
       markdown = {
         enable = true;
