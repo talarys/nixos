@@ -1,15 +1,12 @@
-{ lib, ... }:
-let
-  modules = import ../default.nix { inherit lib; };
-in
 {
-  imports = with modules; [
-    yazi
-    aliases
-    git
-    helix
-    nushell
-    cli-tools
-    packages
+  imports = [
+    ../yazi.nix
+    ../aliases.nix
+    ../git.nix
+    ../helix.nix
+    ../nushell.nix
+    ../cli-tools.nix
+    ../packages.nix
+    ../nvf
   ];
 }
