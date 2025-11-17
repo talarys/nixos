@@ -2,26 +2,26 @@
 {
   programs.git = {
     enable = true;
-    userName = "talarys";
-    userEmail = "d.simon.ssx0@gmail.com";
+    settings = {
+      user = {
+        name = "talarys";
+        email = "d.simon.ssx0@gmail.com";
+      };
+      # Common Aliases
+      alias = {
+        co = "checkout";
+        ci = "commit";
+        st = "status";
+        br = "branch";
+        df = "diff";
+        dc = "diff --cached";
+        lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+        lol = "log --graph --decorate --oneline --all";
+        oops = "commit --amend --no-edit";
+        cleanup = "!git branch --merged | grep -v '\\*\\|main\\|master\\|develop' | xargs -n 1 git branch -d";
+        nvimdiff = "nvim -d";
+      };
 
-    # Common Aliases
-    aliases = {
-      co = "checkout";
-      ci = "commit";
-      st = "status";
-      br = "branch";
-      df = "diff";
-      dc = "diff --cached";
-      lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
-      lol = "log --graph --decorate --oneline --all";
-      oops = "commit --amend --no-edit";
-      cleanup = "!git branch --merged | grep -v '\\*\\|main\\|master\\|develop' | xargs -n 1 git branch -d";
-      nvimdiff = "nvim -d";
-    };
-
-    # Core Configuration
-    extraConfig = {
       core = {
         editor = "nvim"; # or your preferred editor
         pager = "less -FRX";
