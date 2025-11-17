@@ -12,6 +12,7 @@
     ./languages.nix
     ./lsp.nix
     ./snacks.nix
+    ./keymaps.snacks.nix
     ./keymaps.nix
     ./utils.nix
   ];
