@@ -77,6 +77,7 @@
 
     # Editors
     neovim # Vim-based text editor
+    nvix # Nvix nvim configuration
 
     # Android Development
     scrcpy # Android device mirroring
