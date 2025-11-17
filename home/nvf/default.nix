@@ -13,6 +13,7 @@
     ./lsp.nix
     ./snacks.nix
     ./keymaps.snacks.nix
+    ./keymaps.lsp.nix
     ./keymaps.nix
     ./utils.nix
   ];
