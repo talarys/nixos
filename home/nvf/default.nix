@@ -16,6 +16,7 @@
     ./keymaps.lsp.nix
     ./keymaps.nix
     ./utils.nix
+    ./mini.nix
   ];
 
   programs.nvf = {

@@ -10,19 +10,19 @@
 
     statusline.lualine.enable = true;
 
-    autocomplete = {
-      nvim-cmp = {
-        enable = true;
-        sources = {
-          buffer = "[Buffer]";
-          nvim-cmp = null;
-          path = "[Path]";
-        };
-        sourcePlugins = [
-          pkgs.vimPlugins.cmp-cmdline
-        ];
-      };
-    };
+    # autocomplete = {
+    #   nvim-cmp = {
+    #     enable = true;
+    #     sources = {
+    #       buffer = "[Buffer]";
+    #       nvim-cmp = null;
+    #       path = "[Path]";
+    #     };
+    #     sourcePlugins = [
+    #       pkgs.vimPlugins.cmp-cmdline
+    #     ];
+    #   };
+    # };
 
     snippets.luasnip.enable = true;
     ui = {
