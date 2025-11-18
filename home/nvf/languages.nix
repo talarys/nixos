@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   programs.nvf.settings.vim = {
     syntaxHighlighting = true;
@@ -27,13 +24,17 @@
       go.enable = true;
       html.enable = true;
       lua.enable = true;
-      nix.enable = true;
       nu.enable = true;
       python.enable = true;
       rust.enable = true;
       svelte.enable = true;
       tailwind.enable = true;
       zig.enable = true;
+
+      nix = {
+        enable = true;
+        format.type = "nixfmt";
+      };
 
       haskell = {
         enable = true;
@@ -55,7 +56,6 @@
         enable = true;
         extensions.ts-error-translator.enable = true;
       };
-
     };
 
     formatter = {
