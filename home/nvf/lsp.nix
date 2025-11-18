@@ -4,10 +4,8 @@
       enable = true;
       trouble.enable = true;
       lspSignature.enable = true;
-      lspconfig.enable = true;
       formatOnSave = true;
       inlayHints.enable = true;
-      null-ls.enable = true;
       servers.nixd.settings.nil.nix.autoArchive = true;
       otter-nvim = {
         enable = true;

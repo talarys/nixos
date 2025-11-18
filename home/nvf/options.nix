@@ -37,5 +37,10 @@
       style = lib.mkForce "mocha";
       transparent = lib.mkForce true;
     };
+    ui = {
+      borders = {
+        enable = true;
+      };
+    };
   };
 }

@@ -69,7 +69,7 @@
     alejandra # Nix formatter
     deadnix # Dead code detection for Nix
     statix # Nix linter & suggestions
-    nil # Nix language server
+    nixd # Nix language server
     nixfmt-rfc-style # Nix formatter (RFC style)
     hpack # Haskell package manager
     haskell-language-server # Haskell language server

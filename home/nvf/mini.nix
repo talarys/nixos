@@ -16,7 +16,7 @@
     # General workflow
     # basics.enable = true; # common configuration presets
     bracketed.enable = true; # Go forward/backward with square brackets
-    bufremove.enable = true; # Remove buffers
+    # bufremove.enable = true; # Remove buffers
     # clue.enable = true; # Show next key clues
     # deps.enable = true; # Plugin manager
     # diff.enable = true; # Work with diff hunks

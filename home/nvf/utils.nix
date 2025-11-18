@@ -26,6 +26,13 @@
       };
     };
 
+    binds.whichKey = {
+      enable = true;
+      setupOpts = {
+        preset = "helix";
+      };
+    };
+
     snippets.luasnip.enable = true;
 
     ui = {
@@ -49,7 +56,6 @@
     visuals = {
       nvim-web-devicons.enable = true;
       rainbow-delimiters.enable = true;
-      nvim-scrollbar.enable = true;
     };
   };
 }
