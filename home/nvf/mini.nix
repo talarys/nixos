@@ -4,12 +4,12 @@
     ai.enable = true; # Extend and create a/i textobjects
     # align.enable = true; # Align text interactively
     comment.enable = true; # Comment lines
-    completion.enable = true; # Completion and signature help
+    # completion.enable = true; # Completion and signature help
     # keymap.enable = true; # Special key mappings
     move.enable = true; # Move any selection in any direction
     operators.enable = true; # Text edit operators
     pairs.enable = true; # Autopairs
-    snippets.enable = true; # Manage and expand snippets
+    # snippets.enable = true; # Manage and expand snippets
     splitjoin.enable = true; # Split and join arguments
     surround.enable = true; # Surround actions
 
@@ -37,12 +37,12 @@
     # cursorword.enable = true; # Autohighlight word under cursor
     # hipatterns.enable = true; # Highlight patterns in text
     # hues.enable = true; # Generate configurable color scheme
-    icons.enable = true; # Icon provider
+    # icons.enable = true; # Icon provider
     # indentscope.enable = true; # Visualize and work with indent scope
     # map.enable = true; # Window with buffer text overview
     # notify.enable = true; # Show notifications
     # starter.enable = true; # Start screen
-    statusline.enable = true; # Statusline
+    # statusline.enable = true; # Statusline
     # tabline.enable = true; # Tabline
     # trailspace.enable = true; # Trailspace (highlight and remove)
   };

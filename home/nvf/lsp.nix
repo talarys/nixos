@@ -21,7 +21,7 @@
           };
         };
       };
-      # lspkind.enable = true;
+      lspkind.enable = true;
       lspsaga = {
         enable = true;
         setupOpts = {
