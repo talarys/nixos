@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
   programs.nvf.settings.vim = {
+    assistant.copilot.enable = true;
+
     utility = {
       motion.flash-nvim.enable = true;
       smart-splits.enable = true;

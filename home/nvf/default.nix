@@ -17,6 +17,7 @@
     ./keymaps.nix
     ./utils.nix
     ./mini.nix
+    ./dashboard.nix
   ];
 
   programs.nvf = {
