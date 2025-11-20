@@ -1,4 +1,10 @@
 {
+  services.ssh-agent = {
+    enable = true;
+    enableFishIntegration = true;
+    enableNushellIntegration = true;
+  };
+
   programs = {
     starship = {
       enable = true;
@@ -46,6 +52,12 @@
     };
 
     pay-respects = {
+      enable = true;
+      enableFishIntegration = true;
+      enableNushellIntegration = true;
+    };
+
+    lazygit = {
       enable = true;
       enableFishIntegration = true;
       enableNushellIntegration = true;
