@@ -7,15 +7,6 @@ let
       desc
       ;
   };
-  mkLuaKeymap = mode: key: action: desc: {
-    lua = true;
-    inherit
-      mode
-      key
-      action
-      desc
-      ;
-  };
 in
 {
   programs.nvf.settings.vim = {
@@ -41,49 +32,7 @@ in
       (mkKeymap "n" "gpt" "<cmd>Lspsaga peek_type_definition<cr>" "Peek Type Definition")
       (mkKeymap "n" "[e" "<cmd>Lspsaga diagnostic_jump_prev<cr>" "Jump Prev Diagnostic")
       (mkKeymap "n" "]e" "<cmd>Lspsaga diagnostic_jump_next<cr>" "Jump Next Diagnostic")
-      (mkLuaKeymap "n" "K" ''
-        function()
-          local ok, ufo = pcall(require, "ufo")
-          if ok then
-            winid = ufo.peekFoldedLinesUnderCursor()
-          end
-          if not winid then
-            vim.cmd("Lspsaga hover_doc")
-          end
-        end
-      '' "Hover Doc")
-
-      # UFO
-      (mkLuaKeymap "n" "zR"
-        # lua
-        ''
-          function()
-            require("ufo").openAllFolds()
-          end
-        ''
-        "Open all folds"
-      )
-      (mkLuaKeymap "n" "zM"
-        # lua
-        ''
-          function()
-            require("ufo").closeAllFolds()
-          end
-        ''
-        "Close All Folds"
-      )
-      (mkLuaKeymap "n" "zK"
-        # lua
-        ''
-          function()
-            local winid = require("ufo").peekFoldedLinesUnderCursor()
-            if not winid then
-              vim.lsp.buf.hover()
-            end
-          end
-        ''
-        "Peek Folded Lines"
-      )
+      (mkKeymap "n" "K" "<cmd>Lspsaga hover_doc<cr>" "Hover Doc")
 
       (mkKeymap "n" "<leader>lq" "<CMD>LspStop<Enter>" "Stop LSP")
       (mkKeymap "n" "<leader>li" "<cmd>LspInfo<cr>" "LSP Info")
@@ -100,34 +49,6 @@ in
 
       (mkKeymap "n" "[d" "<cmd>:lua vim.diagnostic.goto_prev()<cr>" "Previous Diagnostic")
       (mkKeymap "n" "]d" "<cmd>:lua vim.diagnostic.goto_next()<cr>" "Next Diagnostic")
-      (mkLuaKeymap "n" "<leader>lL"
-        # lua
-        ''
-          function()
-            if vim.g.diagnostics_visible == nil or vim.g.diagnostics_visible then
-              vim.g.diagnostics_visible = false
-              vim.diagnostic.disable()
-            else
-              vim.g.diagnostics_visible = true
-              vim.diagnostic.enable()
-            end
-          end
-        ''
-        "Toggle Diagnostics"
-      )
-      (mkLuaKeymap "n" "<leader>ll"
-        # lua
-        ''
-          function()
-            if vim.diagnostic.config().virtual_text == false then
-              vim.diagnostic.config({ virtual_text = { source = "always" } })
-            else
-              vim.diagnostic.config({ virtual_text = false })
-            end
-          end
-        ''
-        "Toggle Virtual Text"
-      )
     ];
   };
 }
