@@ -3,7 +3,6 @@
     lsp = {
       enable = true;
       trouble.enable = true;
-      lspSignature.enable = true;
       formatOnSave = true;
       inlayHints.enable = true;
       servers.nixd.settings.nil.nix.autoArchive = true;

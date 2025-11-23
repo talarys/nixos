@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   programs.nvf.settings.vim = {
     assistant.copilot.enable = true;
@@ -15,17 +14,7 @@
     # tabline.nvimBufferline.enable = true;
 
     autocomplete = {
-      nvim-cmp = {
-        enable = true;
-        sources = {
-          buffer = "[Buffer]";
-          nvim-cmp = null;
-          path = "[Path]";
-        };
-        sourcePlugins = [
-          pkgs.vimPlugins.cmp-cmdline
-        ];
-      };
+      blink-cmp.enable = true;
     };
 
     binds.whichKey = {
