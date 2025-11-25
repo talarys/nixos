@@ -6,6 +6,5 @@
     ../nushell.nix
     ../cli-tools.nix
     ../packages.nix
-    ../nvf
   ];
 }
