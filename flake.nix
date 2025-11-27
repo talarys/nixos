@@ -39,7 +39,7 @@
 
     nixcats = {
       url = "github:talarys/nixcats";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -52,7 +52,6 @@
     {
       inherit (lib) formatter;
       inherit (lib) checks;
-      inherit (lib) devShells;
 
       nixosConfigurations = {
         argos = lib.mkHost {

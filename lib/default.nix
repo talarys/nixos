@@ -10,11 +10,4 @@ rec {
   checks = eachSystem (pkgs: {
     formatting = treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.check inputs.self;
   });
-
-  devShells = eachSystem (pkgs: {
-    default = import ./dev-shell.nix {
-      inherit inputs;
-      inherit (pkgs.stdenv.hostPlatform.system) system;
-    };
-  });
 }
