@@ -41,40 +41,57 @@
     watchexec # Run commands when files change
     entr # Run commands when files change
     epy # Simple Python package manager
-    pokego # Nintendo Switch interaction tool
+    pokego # Pokemon ascii art
     zlib # Compression library
     opencode # LLM TUI
 
-    # Programming Languages & Runtimes
+    # Typescript
     nodejs # JavaScript runtime
     bun # JavaScript runtime & toolkit
     pnpm # Fast JavaScript package manager
+    biome # JavaScript and Typescript lsp
+
+    # Golang
     go # Go programming language
+    gopls # Go lsp
+
+    #Rust
     cargo # Rust package manager
     rustc # Rust compiler
+
+    #Zig
     zig # Zig programming language
+    zls # Zig lsp
+
+    # Haskell
     stack # Haskell build tool
     cabal-install # Haskell package manager
     ghc # Glasgow Haskell Compiler
+    hpack # Haskell package manager
+    haskell-language-server # Haskell language server
+    ghciwatch # GHCi file watcher
+
+    # Lua
+    lua
     stylua # Lua formatter
     lua-language-server # Lua language server
+
+    # C C++
     gcc # GNU Compiler Collection
     gnumake # GNU Make
     clang-tools # Clang tools
+
+    # Python
     uv # Python package manager
     ruff # Python linter & formatter
     basedpyright # Python lsp
 
-    # Code Quality & Formatting
-    alejandra # Nix formatter
+    # Nix
     deadnix # Dead code detection for Nix
     statix # Nix linter & suggestions
     nixd # Nix language server
     nil # Nix language server
     nixfmt-rfc-style # Nix formatter (RFC style)
-    hpack # Haskell package manager
-    haskell-language-server # Haskell language server
-    ghciwatch # GHCi file watcher
 
     # Editors
     neovim # Vim-based text editor
