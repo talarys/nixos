@@ -17,7 +17,6 @@
     dust # More intuitive du replacement
 
     # Process & System Monitoring
-    btop # Resource monitor (htop alternative)
     procs # Modern process viewer (ps alternative)
 
     # File Searching
