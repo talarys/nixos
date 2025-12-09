@@ -9,7 +9,6 @@
   modules = {
     core = {
       boot.enable = false;
-      hardened.enable = false;
       networking.enable = false;
     };
   };

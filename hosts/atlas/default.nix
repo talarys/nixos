@@ -13,7 +13,6 @@
   modules = {
     core = {
       networking.enable = false;
-      hardened.enable = false;
     };
     virtualisation = {
       podman.enable = true;
