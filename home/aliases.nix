@@ -3,6 +3,7 @@
     cd = "z";
     grep = "rg";
     cat = "bat";
+    man = "batman";
 
     cp = "cp -i";
     mv = "mv -i";
@@ -12,5 +13,6 @@
     npx = "bunx";
 
     python = "uv run python";
+
   };
 }

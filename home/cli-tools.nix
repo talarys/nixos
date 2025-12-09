@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   services.ssh-agent = {
     enable = true;
@@ -61,6 +62,21 @@
       enable = true;
       enableFishIntegration = true;
       enableNushellIntegration = true;
+    };
+
+    bat = {
+      enable = true;
+      config = {
+        theme = "Catppuccin Mocha";
+      };
+      extraPackages = with pkgs.bat-extras; [
+        batgrep
+        batman
+        batpipe
+        batwatch
+        batdiff
+        prettybat
+      ];
     };
   };
 }
