@@ -10,5 +10,7 @@
 
     npm = "bun";
     npx = "bunx";
+
+    python = "uv run python";
   };
 }
