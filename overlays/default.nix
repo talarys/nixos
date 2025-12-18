@@ -4,4 +4,5 @@ _final: prev: {
   faugus-launcher = prev.callPackage ./faugus-launcher.nix { };
   pokego = prev.callPackage ./pokego.nix { };
   neovim = inputs.nixcats.packages.${prev.system}.default;
+  flox = inputs.flox.packages.${prev.system}.default;
 }

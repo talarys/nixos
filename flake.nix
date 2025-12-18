@@ -41,6 +41,11 @@
       url = "github:talarys/nixcats";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    flox = {
+      url = "github:flox/flox/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

@@ -43,6 +43,7 @@
     pokego # Pokemon ascii art
     zlib # Compression library
     opencode # LLM TUI
+    flox # # Development environment manager
 
     # Typescript
     nodejs # JavaScript runtime
