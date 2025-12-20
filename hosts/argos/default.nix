@@ -14,5 +14,20 @@
     "dev"
   ];
 
+  modules = {
+    hardware = {
+      nvidia = true;
+      amdCpu = true;
+    };
+    system = {
+      audio.enable = true;
+      bluetooth.enable = true;
+      fonts.enable = true;
+      gaming.enable = true;
+      kde.enable = true;
+    };
+
+  };
+
   networking.hostName = "argos";
 }
