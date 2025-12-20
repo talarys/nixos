@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.modules.desktop.gaming;
+  cfg = config.modules.system.gaming;
 in
 {
-  options.modules.desktop.gaming = {
+  options.modules.system.gaming = {
     enable = mkEnableOption "gaming configuration";
   };
   config = mkIf cfg.enable {

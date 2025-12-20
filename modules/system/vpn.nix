@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.modules.nixos.core.vpn;
+  cfg = config.modules.system.vpn;
 in
 {
-  options.modules.nixos.core.vpn = {
+  options.modules.system.vpn = {
     enable = mkEnableOption "VPN support for NixOS";
   };
 

@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.modules.desktop.hyprland;
+  cfg = config.modules.system.hyprland;
 in
 {
-  options.modules.desktop.hyprland = {
+  options.modules.system.hyprland = {
     enable = mkEnableOption "Hyprland configuration";
   };
 

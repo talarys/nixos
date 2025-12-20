@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.modules.desktop.fonts;
+  cfg = config.modules.system.fonts;
 in
 {
-  options.modules.desktop.fonts = {
+  options.modules.system.fonts = {
     enable = mkEnableOption "font configuration";
   };
 

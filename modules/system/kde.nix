@@ -5,10 +5,10 @@
 }:
 with lib;
 let
-  cfg = config.modules.desktop.kde;
+  cfg = config.modules.system.kde;
 in
 {
-  options.modules.desktop.kde = {
+  options.modules.system.kde = {
     enable = mkEnableOption "KDE Plasma configuration";
   };
   config = mkIf cfg.enable {

@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.modules.desktop.audio;
+  cfg = config.modules.system.audio;
 in
 {
-  options.modules.desktop.audio = {
+  options.modules.system.audio = {
     enable = mkEnableOption "audio support";
   };
 
