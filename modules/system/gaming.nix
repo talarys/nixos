@@ -19,7 +19,7 @@ in
       vulkan-loader
       vulkan-validation-layers
       libva-utils
-      glxinfo
+      mesa-demos
       clinfo
 
       # Game launchers
@@ -40,7 +40,7 @@ in
       mangohud # Performance overlay
       goverlay # GUI for MangoHud and other overlays
       gamescope # SteamOS compositor
-      vkBasalt # Vulkan post-processing
+      vkbasalt # Vulkan post-processing
       dxvk # Direct3D to Vulkan
 
       # Hardware monitoring
