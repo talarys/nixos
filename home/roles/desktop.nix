@@ -3,6 +3,6 @@
     ../browsers.nix
     ../kitty.nix
     ../mpv.nix
-    ../programs.nix
+    ../apps.nix
   ];
 }
