@@ -39,7 +39,7 @@
 
     nixcats = {
       url = "github:talarys/nixcats";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     flox = {
