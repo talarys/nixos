@@ -1,0 +1,31 @@
+{ withSystem, ... }:
+{
+  perSystem =
+    { pkgs, ... }:
+    {
+      packages.system = pkgs.writeShellScriptBin "system" "nix-instantiate --eval --expr builtins.currentSystem --raw";
+    };
+
+  flake.modules.homeManager.nh =
+    { pkgs, ... }:
+    {
+      home.packages =
+        (with pkgs; [
+          nh
+          nix-output-monitor
+          nix-fast-build
+          nix-tree
+          nvd
+          nix-diff
+        ])
+        ++ [
+          (withSystem pkgs.system (psArgs: psArgs.config.packages.system))
+        ];
+      programs.nh = {
+        enable = true;
+        clean.enable = true;
+        clean.extraArgs = "--keep-since 7d --keep 3";
+        flake = "/home/talarys/nixos";
+      };
+    };
+}

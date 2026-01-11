@@ -1,4 +1,6 @@
 {
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -12,13 +14,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-index-database = {
-      url = "github:nix-community/nix-index-database";
+    import-tree = {
+      url = "github:vic/import-tree";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -29,6 +36,11 @@
 
     disko = {
       url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -47,37 +59,4 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
-  outputs =
-    inputs:
-    let
-      lib = import ./lib { inherit inputs; };
-      specialArgs = { inherit inputs; };
-    in
-    {
-      inherit (lib) formatter;
-      inherit (lib) checks;
-
-      nixosConfigurations = {
-        argos = lib.mkHost {
-          hostname = "argos";
-          inherit specialArgs;
-          modules = [ ];
-        };
-
-        void = lib.mkHost {
-          hostname = "void";
-          inherit specialArgs;
-          modules = [
-            inputs.nixos-wsl.nixosModules.wsl
-          ];
-        };
-
-        atlas = lib.mkHost {
-          hostname = "atlas";
-          inherit specialArgs;
-          modules = [ ];
-        };
-      };
-    };
 }
