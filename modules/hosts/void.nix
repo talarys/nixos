@@ -1,7 +1,7 @@
 { inputs, ... }:
 let
   system = "x86_64-linux";
-  hostname = "argos";
+  hostname = "void";
 in
 {
   flake.homeConfigurations.${hostname} = inputs.home-manager.lib.homeManagerConfiguration {
@@ -11,7 +11,12 @@ in
 
   flake.nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
     inherit system;
-    modules = with inputs.self.modules.nixos; [ hostname ];
+    modules = with inputs.self.modules.nixos; [
+      hostname
+      nix
+      wsl
+      imports
+    ];
   };
 
   flake.modules.nixos.${hostname} = {

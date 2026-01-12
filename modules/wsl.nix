@@ -1,5 +1,5 @@
 {
-  modules.nixos.wsl =
+  flake.modules.nixos.wsl =
     { inputs }:
     {
       imports = [ inputs.nixos-wsl.nixosModules.wsl ];

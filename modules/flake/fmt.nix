@@ -42,6 +42,5 @@
         };
       };
     };
-    pre-commit.settings.hooks.treefmt.enable = false;
   };
 }
