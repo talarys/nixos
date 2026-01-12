@@ -1,17 +1,30 @@
+{ inputs, lib, ... }:
 {
-  flake.modules.nixos.boot = {
-    boot = {
-      loader = {
-        systemd-boot = {
+  styx.boot.provides = {
+    secure.nixos = {
+      imports = [ inputs.lanzaboote.nixosModules.lanzaboote ];
+      boot = {
+        loader.systemd-boot.enable = lib.mkForce false;
+        lanzaboote = {
           enable = true;
-          configurationLimit = 10;
-          editor = false;
+          pkiBundle = "/var/lib/sbctl";
         };
-        efi.canTouchEfiVariables = true;
-        timeout = 3;
       };
+    };
 
-      plymouth.enable = false;
+    graphical.nixos.boot = {
+      plymouth.enable = true;
+      consoleLogLevel = 3;
+      initrd.verbose = false;
+      initrd.systemd.enable = true;
+      kernelParams = [
+        "quiet"
+        "splash"
+        "intremap=on"
+        "boot.shell_on_fail"
+        "udev.log_priority=3"
+        "rd.systemd.show_status=auto"
+      ];
     };
   };
 }
