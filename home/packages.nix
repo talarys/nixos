@@ -30,7 +30,6 @@
     delta # Syntax-highlighting pager
     tig # Text-mode interface for Git
     lazygit # Terminal UI for Git
-    gitui # Another terminal UI for Git
 
     # Development Tools
     hyperfine # Command-line benchmarking tool
@@ -43,7 +42,6 @@
     pokego # Pokemon ascii art
     zlib # Compression library
     opencode # LLM TUI
-    flox # # Development environment manager
 
     # Typescript
     nodejs # JavaScript runtime
